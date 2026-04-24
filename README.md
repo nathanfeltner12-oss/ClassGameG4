@@ -19,8 +19,6 @@ You will also need to have an account on [github](https://github.com).
 
 To clone this repository run the following command:
 
-`git clone https://github.com/henryroeth/apollo18.git`
-
 This will create a directory on your computer called **apollo18** which will contain the contents of this game.
 
 3. Next, you will need to setup all the libraries the game depends on.  Go to the **apollo18** directory and run the following command to create a **node_modules** directory and install the needed libraries into it.
