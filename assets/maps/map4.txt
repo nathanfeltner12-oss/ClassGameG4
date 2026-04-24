@@ -5,13 +5,15 @@
 
 
 NJJJJJJJJMANJJJJJJJMNJJJJJJJJMANJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJM
+
  0
-BBBBBB               o         BBBBB    
-     o             BBBBB                 BBB      BBB       oo
+BBBBBB               o     BB  BBBBBB   
+     o             BBBBB               BBB        BBB       oo
      BBBBBBBBB                                          BBBBBB
                                           BBBBBB
                 oooooo       BBBBBB                          %
              BBBBBBBBBBBBB             BBBBBBBBBBBBBBBBBBBBBBBBB
+             
 
 5555555555555555555555555555555555555555555555555555555555555555
 AAHBBBBBBBBBBBBBBBBBBBBBGBBBBBBBBHBBBBGHBBBBBBBBBBBBBBBBBBBBBBBG
