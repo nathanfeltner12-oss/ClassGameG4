@@ -21,9 +21,9 @@ To clone this repository run the following command:
 
 This will create a directory on your computer called **apollo18** which will contain the contents of this game.
 
-3. Next, you will need to setup all the libraries the game depends on.  Go to the **apollo18** directory and run the following command to create a **node_modules** directory and install the needed libraries into it.
+3. Next, you will need to setup all the libraries the game depends on.  Go to the **CPSC_210_BASE_GAME** directory and run the following command to create a **node_modules** directory and install the needed libraries into it.
 
-`npm install`
+`npm install --no-audit`
 
 Your game should be all setup.
 
