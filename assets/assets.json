@@ -43,7 +43,8 @@
         "text": {
             "map1": "assets/maps/map1.txt",
             "map2": "assets/maps/map2.txt",
-            "map4": "assets/maps/map4.txt"
+            "map4": "assets/maps/map4.txt",
+            "map5": "assets/maps/map5.txt"
         },
         "sound": {
             "music": "assets/sounds/background_music.mp3",

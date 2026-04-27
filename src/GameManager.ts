@@ -13,7 +13,7 @@ export enum STATE {Loading, Menu, Running, Finished}
 export class GameManager {
 	
     resources: ResourceManager;  //the resovoir of all loaded resources
-    map: GameMap; //the current state of the game
+    map!: GameMap; //the current state of the game
     inputManager: InputManager; //mappings between user events (keyboard, mouse, etc.) and game actions (run-left, jump, etc.)
     settings: Settings;
     oldState: STATE;
