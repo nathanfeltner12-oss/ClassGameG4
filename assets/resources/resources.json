@@ -15,7 +15,7 @@
             "type": "Player",
 
             "left": [
-                {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
+                {"sheet":"cave_man","rows":2,"cols":4,"duration":150}
             ],
             "right": [
                 {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
