@@ -18,7 +18,7 @@
                 {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
             ],
             "right": [
-                {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
+                {"sheet":"cave_manr","rows":2,"cols":4,"duration":150}
             ],
             "stillLeft": [
                 {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
@@ -177,7 +177,8 @@
         },
         "levels": [
             "map1",
-            "map2"
+            "map2",
+            "map5"
         ]
     }
     

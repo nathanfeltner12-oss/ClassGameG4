@@ -6,8 +6,8 @@
 JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
                                                         C               
                            -             ooooo          C 
-               EBF                       EBBBBF         C 
-0                    -o                         EF      C
+ 0              EBF                       EBBBBF         C 
+                    -o                         EF      C
 BBBBF       EBF         o     -     EBF         -       C 
 AAAAD      EGAD            EBBBBF           EBBBBF EBBBBG
 AAAAD     ooo      -      EGNJJJL        EBBGNJJJL KJJJJM
