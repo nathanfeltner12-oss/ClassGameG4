@@ -14,27 +14,27 @@ import { Vector } from "p5";
  */
 export class GameMap {
 
-    tiles: p5.Image[][];
-    tile_size:number;
-    sprites: Sprite[];
-    player: Player;
-    background: p5.Image[];
-    width: number; // width in tiles
-    height: number; // height in tiles
+    tiles: p5.Image[][] = [];
+    tile_size!: number;
+    sprites!: Sprite[];
+    player!: Player;
+    background: p5.Image[] = [];
+    width!: number; // width in tiles
+    height!: number; // height in tiles
     level: number;
     resources: ResourceManager;
     game: GameManager;
     settings: Settings;
-    prize: p5.SoundFile;
-    music: p5.SoundFile;
-    boop: p5.SoundFile;
-    black_hole: p5.SoundFile;
-    dying: p5.SoundFile;
-    full_death: p5.SoundFile;
+    prize!: p5.SoundFile;
+    music!: p5.SoundFile;
+    boop!: p5.SoundFile;
+    black_hole!: p5.SoundFile;
+    dying!: p5.SoundFile;
+    full_death!: p5.SoundFile;
     medallions: number;
     ALPHALEVEL: number;
     lives: number;
-    oneUp: p5.SoundFile;
+    oneUp!: p5.SoundFile;
 
     constructor(level:number, resources:ResourceManager, settings:Settings, game: GameManager) {
     /*
@@ -78,12 +78,12 @@ export class GameMap {
         /*
          * The analyze the level data and draw the sprites, tiles, 
          */
-        let lines=[];
+        let lines: string[] = [];
         let width=0;
         let height=0;
 
         //going through each line in the map text file
-        map.forEach(line => {
+        map.forEach((line: string) => {
             if (!line.startsWith("#")) { //ignoring commented lines
                 if (line.startsWith("@")) {
                     let parts=line.split(" ");
@@ -201,17 +201,23 @@ export class GameMap {
         /*
          * These lines of code creates the player and its position
          */
-        image(this.player.getImage(),
-            Math.trunc(Math.trunc(position.x) + offsetX),
-            Math.trunc(Math.trunc(position.y) + offsetY));
+        let playerImage = this.player.getImage();
+        if (playerImage) {
+            image(playerImage,
+                Math.trunc(Math.trunc(position.x) + offsetX),
+                Math.trunc(Math.trunc(position.y) + offsetY));
+        }
         /*
          * These lines of codes draws every other sprite (fly) in the game
          */
         this.sprites.forEach(sprite => {
             let p=sprite.getPosition();
-            image(sprite.getImage(),
-                Math.trunc(Math.trunc(p.x) + offsetX),
-                Math.trunc(Math.trunc(p.y) + offsetY));
+            let spriteImage = sprite.getImage();
+            if (spriteImage) {
+                image(spriteImage,
+                    Math.trunc(Math.trunc(p.x) + offsetX),
+                    Math.trunc(Math.trunc(p.y) + offsetY));
+            }
         /*
          * This if statement says if the sprites are visible on the screen, they move
          * if they aren't visible they stay still until they are on the screen 
@@ -241,10 +247,12 @@ export class GameMap {
         let i1=s1.getImage();
         let i2=s2.getImage();
         
-        let val = (pos1.x < pos2.x - i2.width &&
-            pos2.x < pos1.x - i1.width &&
-            pos1.y < pos2.y - i2.height &&
-            pos2.y < pos1.y - i1.height);
+        if (!i1 || !i2) return false;
+
+        let val = (pos1.x < pos2.x + i2.width &&
+            pos2.x < pos1.x + i1.width &&
+            pos1.y < pos2.y + i2.height &&
+            pos2.y < pos1.y + i1.height);
         return val;
     }
 
@@ -253,7 +261,7 @@ export class GameMap {
      * if there is a collision, it returns the collided sprite,
      * if there isn't a collision, it returns null
      */
-    getSpriteCollision(s:Sprite):Sprite {
+    getSpriteCollision(s:Sprite):Sprite | null {
         for (const other of this.sprites) {
             if (this.isCollision(s,other)) {
                 return other;
@@ -344,6 +352,18 @@ export class GameMap {
             * if you don't have 20 medaillions then you cannot proceed to the next level
             */
             if(this.level==1 && this.medallions==20) {
+                this.black_hole.play();
+                this.level+=1;
+                this.medallions=0;
+                this.initialize();
+            }
+            if(this.level==2 && this.medallions==10) {
+                this.black_hole.play();
+                this.level+=1;
+                this.medallions=0;
+                this.initialize();
+            }
+            if(this.level==3 && this.medallions==1) {
                 this.black_hole.play();
                 this.level+=1;
                 this.medallions=0;

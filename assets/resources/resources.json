@@ -21,10 +21,10 @@
                 {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
             ],
             "stillLeft": [
-                {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNLE","rows":4,"cols":4,"duration":150}
             ],
             "stillRight": [
-                {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNRI","rows":4,"cols":4,"duration":150}
             ],
             "jetLeft": [
                 {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
@@ -33,10 +33,10 @@
                 {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
             ],
             "deadLeft": [
-                {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
+                {"sheet":"DeathNL","rows":4,"cols":4,"duration":150}
             ],
             "deadRight": [
-                {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
+                {"sheet":"DeathNR","rows":4,"cols":4,"duration":150}
             ]
         },
         "life": {
