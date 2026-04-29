@@ -204,6 +204,10 @@ export class ResourceManager {
                 s = new Lava();
                 break;
             }
+            case 'Grub':{
+                s = new Grub();
+                break;
+            }
             default: {
                 throw new Error();
             }

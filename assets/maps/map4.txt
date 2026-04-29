@@ -7,7 +7,7 @@ NJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJM
 
  0
 BBBBBB     -          o     BB  BBBBBB   
-     o             BBBBB         -      BBB        BBB       oo
+     o               BBBBB         -   BBB        BBB       oo
      BBBBBBBBB                        -                  BBBBBB
                                           BBBBBB
                 oooooo      - BBBBBB            -             %
@@ -15,4 +15,4 @@ BBBBBB     -          o     BB  BBBBBB
              
 
 5555555555555555555555555555555555555555555555555555555555555555
-AAHBBBBBBBBBBBBBBBBBBBBBGBBBBBBBBHBBBBGHBBBBBBBBBBBBBBBBBBBBBBBG
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB

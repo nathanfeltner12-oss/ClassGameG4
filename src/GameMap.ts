@@ -467,8 +467,38 @@ export class GameMap {
          * if the object is a player, check for collision with objects and other sprites
          */
         if (s instanceof Player) {
-            this.checkPlayerCollision(s as Player, oldY < newPos.y);
-        } 
+
+    let enemy = this.getSpriteCollision(s);
+
+    if (enemy instanceof Creature) {
+
+        let p = s;
+
+        let pPos = p.getPosition();
+        let ePos = enemy.getPosition();
+
+        let pBottom = pPos.y + p.getImage().height;
+        let eTop = ePos.y;
+
+        let falling = p.getVelocity().y > 0;
+
+        // IMPORTANT: use OLD movement direction already known here
+        let hitFromAbove = (pBottom <= eTop + 12);
+
+        if (falling && hitFromAbove) {
+
+            (enemy as Creature).setState(CreatureState.DYING);
+
+            // bounce player
+            let vel = p.getVelocity();
+            p.setVelocity(vel.x, -0.35);
+
+            return; // stop further damage logic
+        }
+    }
+
+    this.checkPlayerCollision(s as Player, oldY < newPos.y);
+}
         /*
          * if the object is not a player, check for collision with other sprites
          * if they collide, bounce off of eachother and change directions
