@@ -5,10 +5,12 @@
             "fly3": "assets/images/fly3.png",
             "grub1": "assets/images/grub1.png",
             "grub2": "assets/images/grub2.png",
-            "cave_man": "assets/images/WalkNL.png",
-            "cave_manr": "assets/images/WalkNR.png",
-            "IdleNRI": "assets/images/IdleNR.png",
-            "IdleNLE": "assets/images/IdleNL.png",
+            "WalkNinjaL": "assets/images/WalkNL.png",
+            "WalkNinjaR": "assets/images/WalkNR.png",
+            "IdleNinjaL": "assets/images/IdleNLE.png",
+            "IdleNinjaR": "assets/images/IdleNRI.png",
+            "ThrowNinjaL": "assets/images/ThrowNL.png",
+            "ThrowNinjaR": "assets/images/ThrowNR.png",
             "fort": "assets/images/fortress.png",
             "life1": "assets/images/life1.png",
             "life2": "assets/images/life2.png",
@@ -36,16 +38,17 @@
             "tile_M": "assets/images/tile_M.png",
             "tile_N": "assets/images/tile_N.png",
             "bg1": "assets/images/Background1.png",
-            "bg2": "assets/images/CopyBG2.png",
+            "bg2": "assets/images/background2.png",
             "medallion1": "assets/images/medallion1.png",
             "medallion2": "assets/images/medallion2.png",
             "medallion3": "assets/images/medallion3.png",
-            "medallion4": "assets/images/medallion4.png"
+            "medallion4": "assets/images/medallion4.png",
         },
         "text": {
             "map1": "assets/maps/map1.txt",
             "map2": "assets/maps/map2.txt",
-            "map4": "assets/maps/map4.txt"
+            "map4": "assets/maps/map4.txt",
+            "map5": "assets/maps/map5.txt"
         },
         "sound": {
             "music": "assets/sounds/background_music.mp3",

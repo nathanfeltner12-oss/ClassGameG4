@@ -15,16 +15,16 @@
             "type": "Player",
 
             "left": [
-                {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
+                {"sheet":"WalkNinjaL","rows":4,"cols":4,"duration":150}
             ],
             "right": [
-                {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
+                {"sheet":"WalkNinjaR","rows":4,"cols":4,"duration":150}
             ],
             "stillLeft": [
-                {"sheet":"IdleNLE","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNinjaL","rows":4,"cols":4,"duration":150}
             ],
             "stillRight": [
-                {"sheet":"IdleNRI","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNinjaR","rows":4,"cols":4,"duration":150}
             ],
             "jetLeft": [
                 {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
@@ -33,10 +33,10 @@
                 {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
             ],
             "deadLeft": [
-                {"sheet":"DeathNL","rows":4,"cols":4,"duration":150}
+                {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
             ],
             "deadRight": [
-                {"sheet":"DeathNR","rows":4,"cols":4,"duration":150}
+                {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
             ]
         },
         "life": {
@@ -178,7 +178,8 @@
         "levels": [
             "map1",
             "map2",
-            "map4"
+            "map4",
+            "map5"
         ]
     }
     
