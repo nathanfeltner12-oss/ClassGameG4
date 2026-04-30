@@ -14,3 +14,6 @@ AAAAD     ooo      -      EGNJJJL        EBBGNJJJL KJJJJM
 AAAAD    EBBBBF      EF  EGAD            CAAAD          C 
 AAAAD555 CAAAAD55555 CD5 CAAD55555555555 CAAAD     %    C
 AAAAHBBBBGAAAAHBBBBBBGHBBGAHBBBBBBBBBBBBBGAAAHBBBBBBBBBBG
+import { SurvivorPlayer } from '../sprites/SurvivorPlayer';
+this.player = new SurvivorPlayer(this, 300, 300);
+this.cursors = this.input.keyboard.createCursorKeys();
