@@ -161,6 +161,8 @@
         "background": "background",
         "bg1": "bg1",
         "bg2": "bg2",
+        "bg3": "bg3",
+        "bg4":"bg4",
         "A": "tile_A",
         "B": "tile_B",
         "C": "tile_C",
