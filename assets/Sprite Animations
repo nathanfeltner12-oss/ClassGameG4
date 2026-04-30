@@ -1,3 +1,0 @@
-git add assets/player/*
-git commit -m "Add survival player sprite images"
-git push
