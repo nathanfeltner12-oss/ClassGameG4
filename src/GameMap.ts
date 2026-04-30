@@ -42,10 +42,10 @@ export class GameMap {
      */    
         this.ALPHALEVEL=20;
         this.settings=settings;
-        this.level=level;
+        this.level=2; //set back to level before merge
         this.resources=resources;
         this.medallions=0;
-        this.lives=3;
+        this.lives=100;
         this.game=game;
         this.initialize();
     }
