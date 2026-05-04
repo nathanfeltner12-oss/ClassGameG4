@@ -39,6 +39,7 @@ export class GameManager {
         this.moveRight=new GameAction();
         this.moveLeft=new GameAction();
         this.jump=new GameAction();
+        this.throwShruiken=new GameAction();
         this.stop=new GameAction();
         this.restart=new GameAction();
         

@@ -510,6 +510,7 @@ export class GameMap {
                 s.setVelocity(oldVel.x*-1, - oldVel.y);
             }
         }
+        
     }
     
     /*
