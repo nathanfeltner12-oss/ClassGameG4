@@ -8,25 +8,15 @@ import { CreatureState } from "./sprites/Creature.js";
 export var GRAVITY = 0.002;
 var FONT_SIZE = 24;
 
-export enum STATE {Loading, Menu, Running, Finished}
-export class GameManager {
-	
-    resources: ResourceManager;  //the resovoir of all loaded resources
-    map: GameMap; //the current state of the game
-    inputManager: InputManager; //mappings between user events (keyboard, mouse, etc.) and game actions (run-left, jump, etc.)
-    settings: Settings;
-    oldState: STATE;
-    gameState: STATE; //the different possible states the game could be in (loading, menu, running, finished, etc.)
-    level: number;
-    moveRight: GameAction;
-    moveLeft: GameAction;
-    jump: GameAction;
-    stop: GameAction;
-    restart: GameAction;
-    img1: Image;
-    img2: Image;
+export enum STATE {
+    Loading,
+    Menu,
+    Running,
+    Finished
+}
 
-    constructor() {
+var GameManager = /** @class */ (function () {
+    function GameManager(this: any) {
         this.img1 = loadImage("assets/images/medallion1.png");
         this.img2 = loadImage("assets/images/life1.png");
 
@@ -37,12 +27,13 @@ export class GameManager {
         this.resources = new ResourceManager("assets/assets.json");
         this.inputManager = new InputManager();
         this.settings = new Settings();
-        this.moveRight=new GameAction();
-        this.moveLeft=new GameAction();
-        this.jump=new GameAction();
-        this.throwShruiken=new GameAction();
-        this.stop=new GameAction();
-        this.restart=new GameAction();
+
+        this.moveRight = new GameAction();
+        this.moveLeft = new GameAction();
+        this.jump = new GameAction();
+        this.stop = new GameAction();
+        this.restart = new GameAction();
+
         
         this.dash = new GameAction();
         this.isDashing = false;
