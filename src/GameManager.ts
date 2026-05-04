@@ -24,6 +24,7 @@ export class GameManager {
     jump: GameAction;
     stop: GameAction;
     restart: GameAction;
+    talk: GameAction;
     img1: Image;
     img2: Image;
 
@@ -41,7 +42,7 @@ export class GameManager {
         this.jump=new GameAction();
         this.stop=new GameAction();
         this.restart=new GameAction();
-        
+        this.talk=new GameAction();
     }
     
     draw() {
@@ -146,6 +147,7 @@ export class GameManager {
                     this.inputManager.setGameAction(this.moveRight,RIGHT_ARROW);
                     this.inputManager.setGameAction(this.moveLeft,LEFT_ARROW);
                     this.inputManager.setGameAction(this.jump,UP_ARROW);
+                    this.inputManager.setGameAction(this.talk,69)
                     /**
                      * sets the "R" key to restart our game
                      */
@@ -192,6 +194,11 @@ export class GameManager {
                 this.map.jump.play();
             }
             this.map.player.jump(false);
+        }
+        
+        if (this.talk.isPressed()) {
+            this.map.talk.play();
+            
         }
         
         if(this.restart.isBeginPress()){

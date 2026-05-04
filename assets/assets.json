@@ -59,7 +59,10 @@
             "boost": "assets/sounds/boost.wav",
             "1up": "assets/sounds/1up.wav",
             "jump":"assets/sounds/jump2.wav",
-            "running":"assets/sounds/jump2.wav"
+            "running":"assets/sounds/jump2.wav",
+            "talk":"assets/sounds/1up.wav"
+
+            
 
             
         },
