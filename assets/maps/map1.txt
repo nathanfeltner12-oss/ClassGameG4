@@ -2,6 +2,9 @@
 @parallax-layer bg1
 @parallax-layer bg2
 @music music
+import { SurvivorPlayer } from '../sprites/SurvivorPlayer';
+this.player = new SurvivorPlayer(this, 300, 300);
+this.cursors = this.input.keyboard.createCursorKeys();
 
 JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
                                                         C               

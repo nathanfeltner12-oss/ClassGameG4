@@ -33,8 +33,10 @@
             "tile_L": "assets/images/tile_L.png",
             "tile_M": "assets/images/tile_M.png",
             "tile_N": "assets/images/tile_N.png",
-            "bg1": "assets/images/background.png",
+            "bg1": "assets/images/Background1.png",
             "bg2": "assets/images/background2.png",
+            "bg3": "assets/images/lake.png.png",
+            "bg4": "assets/images/fog.png.png",
             "medallion1": "assets/images/medallion1.png",
             "medallion2": "assets/images/medallion2.png",
             "medallion3": "assets/images/medallion3.png",
@@ -43,7 +45,8 @@
         "text": {
             "map1": "assets/maps/map1.txt",
             "map2": "assets/maps/map2.txt",
-            "map4": "assets/maps/map4.txt"
+            "map4": "assets/maps/map4.txt",
+            "map5": "assets/maps/map5.txt"
         },
         "sound": {
             "music": "assets/sounds/background_music.mp3",
