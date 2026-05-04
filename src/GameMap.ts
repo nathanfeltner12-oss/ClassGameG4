@@ -36,6 +36,8 @@ export class GameMap {
     lives: number;
     oneUp: p5.SoundFile;
     jump: p5.SoundFile;
+    running: p5.SoundFile;
+
 
     constructor(level:number, resources:ResourceManager, settings:Settings, game: GameManager) {
     /*
