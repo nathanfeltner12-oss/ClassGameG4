@@ -8,7 +8,7 @@ export class Settings {
     public playMusic: boolean;
     public playEvents: boolean;
 
-    music: p5.SoundFile;
+    music!: p5.SoundFile;
 
 
     menu:  p5.Element;
