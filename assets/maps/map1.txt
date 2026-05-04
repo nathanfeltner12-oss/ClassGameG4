@@ -9,8 +9,8 @@ this.cursors = this.input.keyboard.createCursorKeys();
 JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
                                                         C               
                            -             ooooo          C 
- 0              EBF                      EBBBBF         C 
-                    -o                          EF      C
+ 0              EBF                       EBBBBF         C 
+                    -o                         EF      C
 BBBBF       EBF         o     -     EBF         -       C 
 AAAAD      EGAD            EBBBBF           EBBBBF EBBBBG
 AAAAD     ooo      -      EGNJJJL        EBBGNJJJL KJJJJM
