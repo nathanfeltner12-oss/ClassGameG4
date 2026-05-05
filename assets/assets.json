@@ -48,12 +48,10 @@
         },
         "text": {
             "map1": "assets/maps/map1.txt",
-            "map2": "assets/maps/map2.txt",
-            "map4": "assets/maps/map4.txt",
-            "map5": "assets/maps/map5.txt"
+            "map2": "assets/maps/map2.txt"
         },
         "sound": {
-            "music": "assets/sounds/background_music.mp3",
+            "music": "assets/sounds/259177__zagi2__koto-and-shamisen-loop-2.wav",
             "prize": "assets/sounds/medallion.wav",
             "boop2": "assets/sounds/dead.wav",
             "blackHole": "assets/sounds/Black hole sound.wav",
@@ -63,8 +61,8 @@
             "full_death": "assets/sounds/Dying.wav",
             "ammo": "assets/sounds/ammo.wav",
             "boost": "assets/sounds/boost.wav",
-            "1up": "assets/sounds/1up.wav"
-            
+            "1up": "assets/sounds/1up.wav",
+            "jump":"assets/sounds/817288__nightdrawr__short-death-sound.mp3"
         },
         "json": {
             "resources": "assets/resources/resources.json"

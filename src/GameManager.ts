@@ -5,8 +5,8 @@ import { InputManager } from "./InputManager.js";
 import { ResourceManager } from "./ResourceManager.js";
 import { CreatureState } from "./sprites/Creature.js";
 
-export var GRAVITY = 0.002;
-var FONT_SIZE = 24;
+export const GRAVITY = 0.002;
+const FONT_SIZE = 24;
 
 export enum STATE {
     Loading,
@@ -15,8 +15,35 @@ export enum STATE {
     Finished
 }
 
-var GameManager = /** @class */ (function () {
-    function GameManager(this: any) {
+export class GameManager {
+
+    img1: any;
+    img2: any;
+
+    level: number;
+    oldState: STATE;
+    gameState: STATE;
+
+    resources: ResourceManager;
+    inputManager: InputManager;
+    settings: Settings;
+    map!: GameMap;
+
+    moveRight: GameAction;
+    moveLeft: GameAction;
+    jump: GameAction;
+    stop: GameAction;
+    restart: GameAction;
+    dash: GameAction;
+
+    isDashing: boolean;
+    dashTime: number;
+    dashDuration: number;
+
+    lastDir: number;
+
+    constructor() {
+
         this.img1 = loadImage("assets/images/medallion1.png");
         this.img2 = loadImage("assets/images/life1.png");
 
@@ -33,18 +60,17 @@ var GameManager = /** @class */ (function () {
         this.jump = new GameAction();
         this.stop = new GameAction();
         this.restart = new GameAction();
-
-        
         this.dash = new GameAction();
+
         this.isDashing = false;
         this.dashTime = 0;
-        this.dashDuration = 12; // frames
+        this.dashDuration = 12;
 
-       
-        this.lastDir = 1; // 1 = right, -1 = left
+        this.lastDir = 1;
     }
 
-    GameManager.prototype.draw = function () {
+    draw(): void {
+
         switch (this.gameState) {
 
             case STATE.Running: {
@@ -70,34 +96,12 @@ var GameManager = /** @class */ (function () {
                 break;
             }
 
-            case STATE.Loading: {
+            case STATE.Loading:
                 break;
-            }
 
             case STATE.Finished: {
                 fill(255, 0, 0);
                 rect(0, 0, 800, 600);
-
-                fill(0, 0, 255);
-                rect(30, 30, 740, 540);
-
-                fill(0, 0, 0);
-                rect(60, 60, 680, 480);
-
-                textSize(64);
-                fill(227, 197, 0);
-                text("You Win!", 265, 200);
-
-                textSize(32);
-                text("Original Creators of Apollo 18", 250, 280);
-
-                textSize(16);
-                text("Henry Roeth", 340, 330);
-                text("Tristan Adamson", 324, 405);
-                text("Aidan Griffin", 340, 480);
-
-                text("Reload server to restart!", 308, 100);
-                text("Editted for Class by Daniel Gavazzi", 265, 525);
                 break;
 
                 
@@ -106,10 +110,10 @@ var GameManager = /** @class */ (function () {
 
             
         }
-    };
-    
+    }
 
-    GameManager.prototype.update = function () {
+    update(): void {
+
         switch (this.gameState) {
 
             case STATE.Running: {
@@ -119,63 +123,57 @@ var GameManager = /** @class */ (function () {
                 break;
             }
 
-            case STATE.Menu: {
+            case STATE.Menu:
                 break;
-            }
 
             case STATE.Loading: {
+
                 if (this.resources.isLoaded()) {
+
                     this.map = new GameMap(this.level, this.resources, this.settings, this);
                     this.settings.setMusic(this.resources.getLoad("music"));
 
                     this.inputManager.setGameAction(this.moveRight, RIGHT_ARROW);
                     this.inputManager.setGameAction(this.moveLeft, LEFT_ARROW);
                     this.inputManager.setGameAction(this.jump, UP_ARROW);
-
                     this.inputManager.setGameAction(this.restart, 82);
-
-                    //  DASH KEY (Shift)
                     this.inputManager.setGameAction(this.dash, 16);
 
                     this.oldState = STATE.Running;
                     this.gameState = STATE.Menu;
                 }
+
                 break;
             }
         }
-    };
+    }
 
-    GameManager.prototype.processActions = function () {
+    processActions(): void {
 
-        var vel = this.map.player.getVelocity();
+        const vel = this.map.player.getVelocity();
 
-        // track last direction
         if (this.moveRight.isPressed()) this.lastDir = 1;
         if (this.moveLeft.isPressed()) this.lastDir = -1;
 
-        //  START DASHing
-        if (this.dash.isBeginPress() && 
-            this.map.player.getState() == CreatureState.NORMAL && 
-            !this.isDashing) {
-
+        if (
+            this.dash.isBeginPress() &&
+            this.map.player.getState() == CreatureState.NORMAL &&
+            !this.isDashing
+        ) {
             this.isDashing = true;
             this.dashTime = this.dashDuration;
-
             vel.x = this.lastDir * this.map.player.getMaxSpeed() * 3;
         }
 
-        //dash
         if (this.isDashing) {
-            this.dashTime--;
 
-            // keep velocity during dash
+            this.dashTime--;
             vel.x = this.lastDir * this.map.player.getMaxSpeed() * 3;
 
-            if (this.dashTime <= 0) {
-                this.isDashing = false;
-            }
+            if (this.dashTime <= 0) this.isDashing = false;
+
         } else {
-            // NORMAL MOVEMENT
+
             vel.x = 0;
 
             if (this.moveRight.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
@@ -189,42 +187,31 @@ var GameManager = /** @class */ (function () {
 
         this.map.player.setVelocity(vel.x, vel.y);
 
-        // Jump
         if (this.jump.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
             this.map.player.jump(false);
         }
 
-        // Restart
         if (this.restart.isBeginPress()) {
             this.level = 0;
             this.map.initialize();
             this.map.medallions = 0;
             this.gameState = STATE.Running;
         }
-    };
+    }
 
-    GameManager.prototype.toggleFullScreen = function () {
+    toggleFullScreen(): void {
         this.settings.toggleFullScreen();
-    };
+    }
 
-    GameManager.prototype.toggleMenu = function () {
+    toggleMenu(): void {
+
         if (this.gameState == STATE.Menu) {
             this.gameState = this.oldState;
-
-            if (this.gameState != STATE.Menu) {
-                this.settings.hideMenu();
-            } else {
-                this.settings.showMenu();
-            }
+            this.settings.hideMenu();
         } else {
             this.oldState = this.gameState;
             this.gameState = STATE.Menu;
             this.settings.showMenu();
         }
-    };
-    
-
-    return GameManager;
-}());
-
-export { GameManager };
+    }
+}
