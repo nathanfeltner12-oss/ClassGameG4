@@ -542,6 +542,10 @@ export class GameMap {
             else if (sprite instanceof PowerUp) {
                 sprite.update(deltaTime);
             } 
+            else if (sprite instanceof Projectile){
+                this.updateSprite(sprite);
+                sprite.update(deltaTime);
+            }
         });
     }
 
