@@ -103,12 +103,7 @@ export class GameManager {
                 fill(255, 0, 0);
                 rect(0, 0, 800, 600);
                 break;
-
-                
             }
-
-
-            
         }
     }
 

@@ -1,22 +1,13 @@
 
-/*
- * This is a p5.js script (written in TypeScript).  You can read more about
- * p5.js at https://p5js.org.  
- * 
- * The global variables contain all the components/resources for a game.
- * These variables are initiailized in the preload() function.
- * the setup() function runs once and then the draw() function is called
- * multiple times per second while the game is running.
- * 
- * All p5 "hooks" (functions which are called by p5) must be mapped onto
- * the global namespace.  See index.html to see how this is done.
- */
-
 import { GameManager } from "./GameManager.js";  
 import { Image, Renderer } from "p5";
 
 let game: GameManager;
 let canvas: Renderer;
+
+// NEW: base game resolution (DO NOT CHANGE YOUR GAME)
+const BASE_WIDTH = 800;
+const BASE_HEIGHT = 600;
 
 export function preload() {
 	game = new GameManager();
@@ -24,7 +15,7 @@ export function preload() {
 
 export function setup() {
 	frameRate(60);
-	canvas=createCanvas(windowWidth,windowHeight);
+	canvas = createCanvas(windowWidth, windowHeight);
 
 	canvas.style('display', 'block');
 	canvas.style('padding', '0px');
@@ -32,17 +23,30 @@ export function setup() {
 }
 
 export function draw() {
-	background(255); //just for testing purposes.  this probably can be removed when done.
-	let scaleFactor=min(width/800,height/600)
-	scale(scaleFactor,scaleFactor);
+	background(255);
+
+	// NEW: scaling for any window size
+	let scaleFactor = min(width / BASE_WIDTH, height / BASE_HEIGHT);
+
+	push();
+
+	scale(scaleFactor);
+
+	// NEW: center the game inside the window
+	translate(
+		(width / scaleFactor - BASE_WIDTH) / 2,
+		(height / scaleFactor - BASE_HEIGHT) / 2
+	);
+
 	if (focused) {
 		game.update();
 	}
-	
+
 	game.draw();
-	fill(255);
-	stroke(255);
-	rect(800,0,width*10,height*10); 
+
+	pop();
+
+	// (REMOVED the broken rect(800,0,width*10,height*10) line)
 }
 
 export function windowResized() {
