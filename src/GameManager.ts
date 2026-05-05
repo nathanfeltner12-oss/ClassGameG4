@@ -35,6 +35,7 @@ export class GameManager {
     stop: GameAction;
     restart: GameAction;
     dash: GameAction;
+    talk: GameAction;
 
     isDashing: boolean;
     dashTime: number;
@@ -61,6 +62,7 @@ export class GameManager {
         this.stop = new GameAction();
         this.restart = new GameAction();
         this.dash = new GameAction();
+        this.talk = new GameAction();
 
         this.isDashing = false;
         this.dashTime = 0;
@@ -133,6 +135,8 @@ export class GameManager {
                     this.inputManager.setGameAction(this.jump, UP_ARROW);
                     this.inputManager.setGameAction(this.restart, 82);
                     this.inputManager.setGameAction(this.dash, 16);
+                    this.inputManager.setGameAction(this.talk, 32);
+
 
                     this.oldState = STATE.Running;
                     this.gameState = STATE.Menu;
@@ -183,8 +187,14 @@ export class GameManager {
         this.map.player.setVelocity(vel.x, vel.y);
 
         if (this.jump.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
+            if(this.map.player.onGround){
+                this.map.jump.play();
+            }
             this.map.player.jump(false);
         }
+        if (this.talk.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
+                this.map.talk.play();
+            }
 
         if (this.restart.isBeginPress()) {
             this.level = 0;

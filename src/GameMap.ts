@@ -35,6 +35,8 @@ export class GameMap {
     ALPHALEVEL: number;
     lives: number;
     oneUp!: p5.SoundFile;
+    jump: p5.SoundFile;
+    talk: p5.SoundFile;
 
     constructor(level:number, resources:ResourceManager, settings:Settings, game: GameManager) {
     /*
@@ -58,6 +60,8 @@ export class GameMap {
         this.full_death=this.resources.getLoad("full_death");
         this.black_hole=this.resources.getLoad("blackHole");
         this.dying = this.resources.getLoad("dying");
+        this.jump = this.resources.getLoad("jump");
+        this.talk = this.resources.getLoad("talk");
         /*
          * These initialze arrays to store sprites and backgrounds 
          */
@@ -247,10 +251,10 @@ export class GameMap {
         let i1=s1.getImage();
         let i2=s2.getImage();
         
-        let val = (pos1.x < pos2.x - i2.width &&
-            pos2.x < pos1.x - i1.width &&
-            pos1.y < pos2.y - i2.height &&
-            pos2.y < pos1.y - i1.height);
+        let val = (pos1.x < pos2.x + i2.width &&
+            pos2.x < pos1.x + i1.width &&
+            pos1.y < pos2.y + i2.height &&
+            pos2.y < pos1.y + i1.height);
         return val;
     }
 
