@@ -35,6 +35,7 @@ export class GameMap {
     ALPHALEVEL: number;
     lives: number;
     oneUp!: p5.SoundFile;
+    canKill: boolean;
 
     constructor(level:number, resources:ResourceManager, settings:Settings, game: GameManager) {
     /*
@@ -47,6 +48,7 @@ export class GameMap {
         this.medallions=0;
         this.lives=3;
         this.game=game;
+        this.canKill=true;
         this.initialize();
     }
 
@@ -295,6 +297,7 @@ export class GameMap {
             }   
             else if (s instanceof Lava) {
                 p.setState(CreatureState.DYING);
+                this.canKill=false;
                 this.dying.play();
                 this.medallions=0;
             } 
@@ -479,14 +482,17 @@ export class GameMap {
 
         let pBottom = pPos.y + p.getImage().height;
         let eTop = ePos.y;
-
         let falling = p.getVelocity().y > 0;
-
         // IMPORTANT: use OLD movement direction already known here
         let hitFromAbove = (pBottom <= eTop + 12);
-
         if (falling && hitFromAbove) {
-
+            if (enemy instanceof Lava) {
+                p.setState(CreatureState.DYING);
+                this.dying.play();
+                this.medallions=0;
+                this.lives-=1;
+                return; 
+            }
             (enemy as Creature).setState(CreatureState.DYING);
 
             // bounce player
