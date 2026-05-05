@@ -10,7 +10,7 @@ import { FinalBoss } from "./sprites/FinalBoss.js";
 import {Lava} from "./sprites/Lava.js";
 import { Fireball } from "./sprites/Fireball.js";
 import { Projectile, EnemyProjectile} from "./sprites/Projectile.js";
-
+import { Block } from "./sprites/Block.js";
 
 export class ResourceManager {
 
@@ -158,6 +158,10 @@ export class ResourceManager {
         switch (spriteType) {
             case 'Player': {
                 s = new Player();
+                break;
+            }
+            case 'Block': {
+                s = new Block();
                 break;
             }
             case 'Creature': {

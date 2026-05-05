@@ -173,3 +173,4 @@ export class Fly extends Creature {
         return 0.15;
     }
 }
+

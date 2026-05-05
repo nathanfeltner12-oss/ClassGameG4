@@ -5,9 +5,9 @@
 
 
 JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
-                                                        C               
-                           -             ooooo          C 
- 0     -        EBF                   EBBBBF            C
+                                                         C               
+  b                        -             ooooo          C 
+ 0     -        EBF                   EBBBBF           C
                     -o                          EF      C
 BBBBF       EBF         o     -     EBF         -       C 
 AAAAD      EGAD            EBBBBF           EBBBBF EBBBBG

@@ -134,6 +134,12 @@
                 {"img":"lava2", "duration":75}
             ]
         },
+        "block": {
+            "type":"Block",
+            "default":[
+                {"img":"block1", "duration":150}
+            ]
+        },
         "power":{
             "type":"Power",
             "defualt": [
@@ -190,7 +196,8 @@
             "-": "my_fly",
             "5": "lava_pool",
             "g": "grub1",
-            "p": "power"
+            "p": "power",
+            "b": "block"
 
         },
         "levels": [

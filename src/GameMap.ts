@@ -8,6 +8,8 @@ import { Projectile, EnemyProjectile } from './sprites/Projectile.js';
 import { Lava } from "./sprites/Lava.js"
 import { Settings } from "./Settings.js";
 import { Vector } from "p5";
+import {Block} from "./sprites/Block.js";
+
 
 /*
  * This class controls the main actions of the game for the player and the sprites
@@ -222,7 +224,7 @@ export class GameMap {
          * This if statement says if the sprites are visible on the screen, they move
          * if they aren't visible they stay still until they are on the screen 
          */
-            if (sprite instanceof Creature && p.x+offsetX> 0 && p.x+offsetX<myW) {
+            if (sprite instanceof Creature && p.x+offsetX> 0 && p.x+offsetX<myW && !(sprite instanceof Block)) {
                 sprite.wakeUp();
             }
         });
@@ -485,7 +487,7 @@ export class GameMap {
         // IMPORTANT: use OLD movement direction already known here
         let hitFromAbove = (pBottom <= eTop + 12);
 
-        if (falling && hitFromAbove) {
+        if (falling && hitFromAbove && !(enemy instanceof Block)) {
 
             (enemy as Creature).setState(CreatureState.DYING);
 
@@ -494,8 +496,18 @@ export class GameMap {
             p.setVelocity(vel.x, -0.35);
 
             return; // stop further damage logic
-        }
+        } 
+        else if (!falling && !hitFromAbove && (enemy instanceof Block)) {
+            (enemy as Creature).setState(CreatureState.DYING);
+
+            // bounce player
+            let vel = p.getVelocity();
+            p.setVelocity(vel.x, -0.35);
+
+            return;
+
     }
+}
 
     this.checkPlayerCollision(s as Player, oldY < newPos.y);
 }
@@ -532,8 +544,12 @@ export class GameMap {
                 } 
                 else {
                     this.updateSprite(sprite);
-                    sprite.update(deltaTime);
+                    if(sprite instanceof Block){
 
+                    }
+                    else{
+                        sprite.update(deltaTime);
+                    }
                     sprite.effectMap(this);
                 }
             }
