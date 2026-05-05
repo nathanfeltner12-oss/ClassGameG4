@@ -1,5 +1,15 @@
 {
     "sprites": {
+        "goo": {
+            "type": "EnemyProjectile",
+            "default": [
+                {"img":"Shuriken1", "duration":100},
+                {"img":"Shuriken2", "duration":100}
+
+                
+            ]
+        },
+
         "star": {
             "type": "Star",
             "default": [

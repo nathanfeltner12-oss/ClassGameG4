@@ -38,7 +38,11 @@
             "medallion1": "assets/images/medallion1.png",
             "medallion2": "assets/images/medallion2.png",
             "medallion3": "assets/images/medallion3.png",
-            "medallion4": "assets/images/medallion4.png"
+            "medallion4": "assets/images/medallion4.png",
+            "Shuriken1": "assets/images/Shuriken1.png",
+            "Shuriken2": "assets/images/Shuriken2.png"
+
+
         },
         "text": {
             "map1": "assets/maps/map1.txt",

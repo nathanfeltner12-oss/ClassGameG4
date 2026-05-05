@@ -156,6 +156,10 @@ export class ResourceManager {
          * builds our sprites and names them
          */
         switch (spriteType) {
+            case 'EnemyProjectile': {
+                s = new EnemyProjectile();
+                break;
+            }
             case 'Player': {
                 s = new Player();
                 break;

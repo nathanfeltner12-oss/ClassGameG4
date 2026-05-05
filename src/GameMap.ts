@@ -488,7 +488,13 @@ export class GameMap {
         let hitFromAbove = (pBottom <= eTop + 12);
 
         if (falling && hitFromAbove) {
-
+            if (enemy instanceof Lava) {
+                p.setState(CreatureState.DYING);
+                this.dying.play();
+                this.medallions=0;
+                this.lives-=1;
+                return;
+            }
             (enemy as Creature).setState(CreatureState.DYING);
 
             // bounce player
@@ -540,6 +546,10 @@ export class GameMap {
                 }
             }
             else if (sprite instanceof PowerUp) {
+                sprite.update(deltaTime);
+            }
+            else if (sprite instanceof Projectile) {
+                this.updateSprite(sprite);
                 sprite.update(deltaTime);
             } 
         });

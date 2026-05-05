@@ -31,7 +31,7 @@ export class GameManager {
     constructor() {
         this.img1 = loadImage("assets/images/medallion1.png");
         this.img2 = loadImage("assets/images/life1.png");
-        this.level=0;
+        this.level=2;
         this.oldState=STATE.Loading;
         this.gameState=STATE.Loading;
         this.resources=new ResourceManager("assets/assets.json");
