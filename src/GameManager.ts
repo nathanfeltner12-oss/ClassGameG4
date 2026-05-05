@@ -99,9 +99,15 @@ var GameManager = /** @class */ (function () {
                 text("Reload server to restart!", 308, 100);
                 text("Editted for Class by Daniel Gavazzi", 265, 525);
                 break;
+
+                
             }
+
+
+            
         }
     };
+    
 
     GameManager.prototype.update = function () {
         switch (this.gameState) {
@@ -128,7 +134,7 @@ var GameManager = /** @class */ (function () {
 
                     this.inputManager.setGameAction(this.restart, 82);
 
-                    // ✅ DASH KEY (Shift)
+                    //  DASH KEY (Shift)
                     this.inputManager.setGameAction(this.dash, 16);
 
                     this.oldState = STATE.Running;
@@ -147,7 +153,7 @@ var GameManager = /** @class */ (function () {
         if (this.moveRight.isPressed()) this.lastDir = 1;
         if (this.moveLeft.isPressed()) this.lastDir = -1;
 
-        // ✅ START DASH
+        //  START DASH
         if (this.dash.isBeginPress() && 
             this.map.player.getState() == CreatureState.NORMAL && 
             !this.isDashing) {
@@ -158,7 +164,7 @@ var GameManager = /** @class */ (function () {
             vel.x = this.lastDir * this.map.player.getMaxSpeed() * 3;
         }
 
-        // ✅ DASH ACTIVE
+        //dash
         if (this.isDashing) {
             this.dashTime--;
 
@@ -216,6 +222,7 @@ var GameManager = /** @class */ (function () {
             this.settings.showMenu();
         }
     };
+    
 
     return GameManager;
 }());
