@@ -153,7 +153,7 @@ var GameManager = /** @class */ (function () {
         if (this.moveRight.isPressed()) this.lastDir = 1;
         if (this.moveLeft.isPressed()) this.lastDir = -1;
 
-        //  START DASH
+        //  START DASHing
         if (this.dash.isBeginPress() && 
             this.map.player.getState() == CreatureState.NORMAL && 
             !this.isDashing) {
