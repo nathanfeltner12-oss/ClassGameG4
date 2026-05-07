@@ -37,6 +37,7 @@ export class GameMap {
     oneUp!: p5.SoundFile;
     jump: p5.SoundFile;
     talk: p5.SoundFile;
+    dash: p5.SoundFile;
 
     constructor(level:number, resources:ResourceManager, settings:Settings, game: GameManager) {
     /*
@@ -62,6 +63,8 @@ export class GameMap {
         this.dying = this.resources.getLoad("dying");
         this.jump = this.resources.getLoad("jump");
         this.talk = this.resources.getLoad("talk");
+        this.dash = this.resources.getLoad("dash");
+
         /*
          * These initialze arrays to store sprites and backgrounds 
          */

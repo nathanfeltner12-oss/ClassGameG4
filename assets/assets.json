@@ -47,6 +47,7 @@
             "medallion4": "assets/images/medallion4.png",
             "Shuriken1": "assets/images/Shuriken1.png",
             "Shuriken2": "assets/images/Shuriken2.png"
+            
         },
         "text": {
             "map1": "assets/maps/map1.txt",
@@ -63,15 +64,17 @@
             "prize": "assets/sounds/medallion.wav",
             "boop2": "assets/sounds/dead.wav",
             "blackHole": "assets/sounds/Black hole sound.wav",
-            "dying": "assets/sounds/hurt.wav",
+            "dying": "assets/sounds/817288__nightdrawr__short-death-sound.mp3",
             "spit": "assets/sounds/alien_spit.wav",
             "gun_blast": "assets/sounds/gun_blast.wav",
-            "full_death": "assets/sounds/Dying.wav",
+            "full_death": "assets/sounds/84353__creativeheroes__helmutscream_short.wav",
             "ammo": "assets/sounds/ammo.wav",
             "boost": "assets/sounds/boost.wav",
             "1up": "assets/sounds/1up.wav",
-            "jump":"assets/sounds/817288__nightdrawr__short-death-sound.mp3",
-            "talk":"assets/sounds/391286__igor1998__ninja.wav"
+            "jump":"assets/sounds/328715__robinhood76__06098-short-jump-swoosh.wav",
+            "talk":"assets/sounds/391286__igor1998__ninja.wav",
+            "dash":"assets/sounds/688551__d4nhardt__dashnoise.wav"
+
 
         },
         "json": {
