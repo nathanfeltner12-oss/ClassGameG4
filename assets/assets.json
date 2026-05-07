@@ -3,19 +3,23 @@
             "fly1": "assets/images/fly1.png",
             "fly2": "assets/images/fly2.png",
             "fly3": "assets/images/fly3.png",
-            "grub1": "assets/images/grub1.png",
-            "grub2": "assets/images/grub2.png",
-            "cave_man": "assets/images/aidan.png",
-            "cave_manr": "assets/images/aidan.png",
+            "grub1_left": "assets/images/grub1_left.png",
+            "grub1_right": "assets/images/grub1_right.png",
+            "WalkNinjaL": "assets/images/WalkNL.png",
+            "WalkNinjaR": "assets/images/WalkNR.png",
+            "IdleNinjaL": "assets/images/IdleNLE.png",
+            "IdleNinjaR": "assets/images/IdleNRI.png",
+            "ThrowNinjaL": "assets/images/ThrowNL.png",
+            "ThrowNinjaR": "assets/images/ThrowNR.png",
             "fort": "assets/images/fortress.png",
             "life1": "assets/images/life1.png",
             "life2": "assets/images/life2.png",
             "life3": "assets/images/life3.png",
-            "lava1": "assets/images/lava.png",
-            "lava2": "assets/images/lava1.png",
+            "lava1": "assets/images/Spike.png",
+            "lava2": "assets/images/Spike.png",
             "final_boss_dead1": "assets/images/final_boss_dead1.png",
             "final_boss_dead2": "assets/images/final_boss_dead2.png",
-            "final_boss_dead3": "assets/images/final_boss_dead2.png",
+            "final_boss_dead3": "assets/images/final_boss_dead3.png",
             "final_boss1": "assets/images/final_boss/final_boss1.png",
             "final_boss2": "assets/images/final_boss/final_boss2.png",
             "final_boss3": "assets/images/final_boss/final_boss3.png",
@@ -45,21 +49,26 @@
         "text": {
             "map1": "assets/maps/map1.txt",
             "map2": "assets/maps/map2.txt",
+            
             "map4": "assets/maps/map4.txt",
-            "map5": "assets/maps/map5.txt"
-        },
-        "sound": {
-            "music": "assets/sounds/background_music.mp3",
+            "map5": "assets/maps/map5.txt",
+            
+            "map7": "assets/maps/map7.txt"
+
+            },
+            "sound": {
+            "music": "assets/sounds/hurt.wav",
             "prize": "assets/sounds/medallion.wav",
             "boop2": "assets/sounds/dead.wav",
             "blackHole": "assets/sounds/Black hole sound.wav",
-            "dying": "assets/sounds/dre.wav",
+            "dying": "assets/sounds/hurt.wav",
             "spit": "assets/sounds/alien_spit.wav",
             "gun_blast": "assets/sounds/gun_blast.wav",
             "full_death": "assets/sounds/Dying.wav",
             "ammo": "assets/sounds/ammo.wav",
             "boost": "assets/sounds/boost.wav",
-            "1up": "assets/sounds/1up.wav"
+            "1up": "assets/sounds/1up.wav",
+            "jump":"assets/sounds/hurt.wav"
         },
         "json": {
             "resources": "assets/resources/resources.json"

@@ -1,0 +1,9 @@
+@parallax-layer bg1
+@parallax-layer bg2
+@music music
+
+JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
+
+
+                    0               3
+                BBBBBBBBBBBBBBBBBBBBBBBBB
