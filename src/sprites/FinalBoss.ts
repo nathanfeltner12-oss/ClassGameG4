@@ -34,7 +34,7 @@ export class FinalBoss extends Creature {
                 let g:EnemyProjectile;
                 if (this.spitFollows && Math.random()>0.85) {
                     //need an advanced goo class that knows how to follow
-                    g=map.resources.get('goo2').clone();
+                    g=map.resources.get('goo').clone();
                     g.setFollowPlayer();
                 } else {
                     g=map.resources.get('goo').clone();
