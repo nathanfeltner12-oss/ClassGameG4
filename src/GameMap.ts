@@ -37,6 +37,11 @@ export class GameMap {
     oneUp!: p5.SoundFile;
     jump: p5.SoundFile;
     talk: p5.SoundFile;
+    canvasWidth:number = 800;
+    canvasHeight:number = 600;
+   
+
+
 
     constructor(level:number, resources:ResourceManager, settings:Settings, game: GameManager) {
     /*
@@ -174,6 +179,7 @@ export class GameMap {
         let myW=800;
         let myH=600;
         
+        
         let mapWidth=this.tilesToPixels(this.width);
         let mapHeight = this.tilesToPixels(this.height);
         let position=this.player.getPosition();
@@ -186,7 +192,7 @@ export class GameMap {
         this.background.forEach(bg => {
             let x = Math.trunc(offsetX * (myW - bg.width)/(myW-mapWidth));
             let y = Math.trunc(myH - bg.height);
-            image(bg,0,0,myW,myH,0-x,0-y,800,600);
+            image(bg,0,0,myW,myH,0-x,0-y,myW,myH);
         });
         /*
          * These lines of code creates the tiles of the video game that are visible

@@ -27,6 +27,11 @@ export class GameManager {
     talk: GameAction;
     img1: Image;
     img2: Image;
+    widthup: GameAction;
+    widthdown: GameAction;
+    heightup: GameAction;
+    heightdown: GameAction;
+
 
     constructor() {
         this.img1 = loadImage("assets/images/medallion1.png");
@@ -43,6 +48,10 @@ export class GameManager {
         this.stop=new GameAction();
         this.restart=new GameAction();
         this.talk=new GameAction();
+        this.widthup=new GameAction();
+        this.widthdown=new GameAction();
+        this.heightup=new GameAction();
+        this.heightdown=new GameAction();
     }
     
     draw() {
@@ -148,6 +157,10 @@ export class GameManager {
                     this.inputManager.setGameAction(this.moveLeft,LEFT_ARROW);
                     this.inputManager.setGameAction(this.jump,UP_ARROW);
                     this.inputManager.setGameAction(this.talk,69)
+                    this.inputManager.setGameAction(this.widthup,68);
+                    this.inputManager.setGameAction(this.widthdown,65);
+                    this.inputManager.setGameAction(this.heightup,87);
+                    this.inputManager.setGameAction(this.heightdown,83)
                     /**
                      * sets the "R" key to restart our game
                      */
@@ -199,6 +212,39 @@ export class GameManager {
         if (this.talk.isPressed()) {
             this.map.talk.play();
             
+        }
+
+        if (this.widthup.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
+            this.map.canvasWidth += 5;
+
+            resizeCanvas(
+                this.map.canvasWidth,
+                this.map.canvasHeight
+            );
+        }
+        if (this.widthdown.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
+            this.map.canvasWidth -= 5;
+
+            resizeCanvas(
+                this.map.canvasWidth,
+                this.map.canvasHeight
+            );
+        }
+        if (this.heightup.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
+            this.map.canvasHeight += 5;
+
+            resizeCanvas(
+                this.map.canvasWidth,
+                this.map.canvasHeight
+            );
+        }
+        if (this.heightdown.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
+            this.map.canvasHeight -= 5;
+
+            resizeCanvas(
+                this.map.canvasWidth,
+                this.map.canvasHeight
+            );
         }
         
         if(this.restart.isBeginPress()){
