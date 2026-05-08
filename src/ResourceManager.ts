@@ -168,6 +168,10 @@ export class ResourceManager {
                 s = new Creature();
                 break;
             }
+            case 'shuriken': {
+                s = new Bullet();
+                break;
+            }
             case 'Sprite': {
                 s = new Sprite();
                 break;

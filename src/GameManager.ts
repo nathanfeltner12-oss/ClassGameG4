@@ -25,6 +25,14 @@ export class GameManager {
     stop: GameAction;
     restart: GameAction;
     talk: GameAction;
+    shoot: GameAction;
+    
+
+    isDashing: boolean;
+    dashTime: number;
+    dashDuration: number;
+
+    lastDir: number;
     img1: Image;
     img2: Image;
     widthup: GameAction;
@@ -42,6 +50,25 @@ export class GameManager {
         this.resources=new ResourceManager("assets/assets.json");
         this.inputManager = new InputManager();
         this.settings = new Settings();
+
+        this.moveRight = new GameAction();
+        this.moveLeft = new GameAction();
+        this.jump = new GameAction();
+        this.stop = new GameAction();
+        this.restart = new GameAction();
+        this.dash = new GameAction();
+        this.talk = new GameAction();
+        this.shoot = new GameAction();
+
+        this.isDashing = false;
+        this.dashTime = 0;
+        this.dashDuration = 12;
+
+        this.lastDir = 1;
+    }
+
+    draw(): void {
+
         this.moveRight=new GameAction();
         this.moveLeft=new GameAction();
         this.jump=new GameAction();
@@ -166,6 +193,14 @@ export class GameManager {
                      */
                     this.inputManager.setGameAction(this.restart,82);
 
+                    this.inputManager.setGameAction(this.moveRight, RIGHT_ARROW);
+                    this.inputManager.setGameAction(this.moveLeft, LEFT_ARROW);
+                    this.inputManager.setGameAction(this.jump, UP_ARROW);
+                    this.inputManager.setGameAction(this.restart, 82);
+                    this.inputManager.setGameAction(this.dash, 16);
+                    this.inputManager.setGameAction(this.shoot, 32);
+
+
                     this.oldState=STATE.Running;
                     this.gameState=STATE.Menu;                
                 }
@@ -250,6 +285,12 @@ export class GameManager {
         if(this.restart.isBeginPress()){
             this.level==0;
             this.map.initialize();
+            this.map.medallions = 0;
+            this.gameState = STATE.Running;
+        }
+        if (this.shoot.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
+                this.map.player.shoot(this.map);
+            }
             this.map.medallions=0;
             this.gameState=STATE.Running;
         }

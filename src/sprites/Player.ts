@@ -39,6 +39,23 @@ export class Player extends Creature {
         this.onGround=false;
         this.jetPackOn=false;
     }
+    shoot(gameMap: GameMap) {
+
+    let direction = this.velocity.x >= 0 ? 1 : -1;
+
+    let bullet: Bullet;
+    bullet = gameMap.resources.get("goo2").clone();
+    bullet.setDirection(direction);
+    let pos = this.getPosition();
+
+    bullet.setPosition(
+        pos.x + (direction === 1 ? 50 : -50),
+        pos.y
+    );
+
+    gameMap.sprites.push(bullet);
+    
+}
     /**
      * function to get the amount of fuel the jetpack is using
      * @returns 

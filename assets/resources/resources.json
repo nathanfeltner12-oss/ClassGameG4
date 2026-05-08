@@ -1,5 +1,12 @@
 {
     "sprites": {
+        "goo2": {
+            "type": "Shuriken",
+            "default": [
+                {"img":"Shuriken1", "duration":100}
+            ]
+        },
+        
         "goo": {
             "type": "EnemyProjectile",
             "default": [
@@ -146,9 +153,9 @@
         },
         "power":{
             "type":"Power",
-            "defualt": [
-                {"img":"power1", "duration": 150},
-                {"img":"power2", "duration": 150}
+            "default": [
+                {"img":"life1", "duration": 150},
+                {"img":"life2", "duration": 150}
             ]
         }    
     },
