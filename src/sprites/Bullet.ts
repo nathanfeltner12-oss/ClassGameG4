@@ -1,10 +1,9 @@
 import { Fly } from "./Creature.js";
+import { CreatureState } from "./Creature.js";
 
 /**
- * This Class is for the Bullet Object that will be shot out by the Main Player and 
- * Opponenets inside the Game. 
+ * Bullet projectile fired by player or enemies
  */
-
 export class Bullet extends Fly {
 
     direction: number = 1; // 1 = right, -1 = left
@@ -12,10 +11,6 @@ export class Bullet extends Fly {
 
     constructor(direction: number = 1) {
         super();
-        this.direction = direction;
-    }
-
-    setDirection(direction: number){
         this.direction = direction;
     }
 

@@ -1,22 +1,12 @@
 {
     "sprites": {
-        "goo2": {
-            "type": "Shuriken",
-            "default": [
-                {"img":"Shuriken1", "duration":100}
-            ]
-        },
-        
         "goo": {
             "type": "EnemyProjectile",
             "default": [
                 {"img":"Shuriken1", "duration":100},
                 {"img":"Shuriken2", "duration":100}
-
-                
             ]
         },
-
         "star": {
             "type": "Star",
             "default": [
@@ -32,28 +22,28 @@
             "type": "Player",
 
             "left": [
-                {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
+                {"sheet":"WalkNinjaL","rows":4,"cols":4,"duration":150}
             ],
             "right": [
-                {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
+                {"sheet":"WalkNinjaR","rows":4,"cols":4,"duration":150}
             ],
             "stillLeft": [
-                {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNinjaL","rows":4,"cols":4,"duration":150}
             ],
             "stillRight": [
-                {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNinjaR","rows":4,"cols":4,"duration":150}
             ],
             "jetLeft": [
-                {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNinjaL","rows":4,"cols":4,"duration":150}
             ],
             "jetRight": [
-                {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNinjaR","rows":4,"cols":4,"duration":150}
             ],
             "deadLeft": [
-                {"sheet":"cave_man","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNinjaL","rows":4,"cols":4,"duration":150}
             ],
             "deadRight": [
-                {"sheet":"cave_manr","rows":4,"cols":4,"duration":150}
+                {"sheet":"IdleNinjaR","rows":4,"cols":4,"duration":150}
             ]
         },
         "life": {
@@ -154,15 +144,32 @@
         "power":{
             "type":"Power",
             "default": [
-                {"img":"life1", "duration": 150},
-                {"img":"life2", "duration": 150}
+                {"img":"power1", "duration": 150},
+                {"img":"power2", "duration": 150}
             ]
-        }    
+        },  
+        "grub1": {
+            "type": "Grub",
+            "left": [
+                {"sheet":"grub1_left","rows":4,"cols":4, "duration":150}
+            ],
+            "right": [
+                {"sheet":"grub1_right","rows":4,"cols":4, "duration":150}
+            ],
+            "deadLeft": [
+                {"sheet":"grub1_left","rows":4,"cols":4, "duration":200}
+            ],
+            "deadRight": [
+                {"sheet":"grub1_right","rows":4,"cols":4, "duration":200}
+            ]
+        } 
     },
     "images": {
         "background": "background",
         "bg1": "bg1",
         "bg2": "bg2",
+        "bg3": "bg3",
+        "bg4":"bg4",
         "A": "tile_A",
         "B": "tile_B",
         "C": "tile_C",
@@ -189,6 +196,7 @@
             "%": "end_portal",
             "-": "my_fly",
             "5": "lava_pool",
+            "g": "grub1",
             "p": "power"
 
         },
@@ -196,7 +204,9 @@
             "map1",
             "map2",
             "map4",
-            "map7"
+            "map5",
+            "map7",
+            "map8"
         ]
     }
     

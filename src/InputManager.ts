@@ -19,7 +19,7 @@ export class InputManager {
      * this removes certain keycodes from certain actions within the game
      */
     clearGameAction(keyCode:number) {
-        this.actions[keyCode]=null;
+        delete this.actions[keyCode];
     }
     /*
      * this resets all the initial game actions to their original state

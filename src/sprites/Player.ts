@@ -1,6 +1,8 @@
 import { Vector } from "p5";
 import { Creature, CreatureState } from "./Creature.js";
 import { Sprite } from "./Sprite.js";
+import { Bullet } from "./Bullet.js";
+import { GameMap } from "../GameMap.js";
 /**
  * defines the player class as a subclass of creature
  */
@@ -43,18 +45,16 @@ export class Player extends Creature {
 
     let direction = this.velocity.x >= 0 ? 1 : -1;
 
-    let bullet: Bullet;
-    bullet = gameMap.resources.get("goo2").clone();
-    bullet.setDirection(direction);
+    let bullet = new Bullet(direction);
+
     let pos = this.getPosition();
 
     bullet.setPosition(
-        pos.x + (direction === 1 ? 50 : -50),
+        pos.x + (direction === 1 ? 30 : -30),
         pos.y
     );
 
     gameMap.sprites.push(bullet);
-    
 }
     /**
      * function to get the amount of fuel the jetpack is using

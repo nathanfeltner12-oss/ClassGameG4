@@ -35,13 +35,10 @@ export class GameMap {
     ALPHALEVEL: number;
     lives: number;
     oneUp!: p5.SoundFile;
+    canKill: boolean;
     jump: p5.SoundFile;
     talk: p5.SoundFile;
-    canvasWidth:number = 800;
-    canvasHeight:number = 600;
-   
-
-
+    dash: p5.SoundFile;
 
     constructor(level:number, resources:ResourceManager, settings:Settings, game: GameManager) {
     /*
@@ -54,6 +51,7 @@ export class GameMap {
         this.medallions=0;
         this.lives=3;
         this.game=game;
+        this.canKill=true;
         this.initialize();
     }
 
@@ -67,6 +65,8 @@ export class GameMap {
         this.dying = this.resources.getLoad("dying");
         this.jump = this.resources.getLoad("jump");
         this.talk = this.resources.getLoad("talk");
+        this.dash = this.resources.getLoad("dash");
+
         /*
          * These initialze arrays to store sprites and backgrounds 
          */
@@ -179,7 +179,6 @@ export class GameMap {
         let myW=800;
         let myH=600;
         
-        
         let mapWidth=this.tilesToPixels(this.width);
         let mapHeight = this.tilesToPixels(this.height);
         let position=this.player.getPosition();
@@ -192,7 +191,7 @@ export class GameMap {
         this.background.forEach(bg => {
             let x = Math.trunc(offsetX * (myW - bg.width)/(myW-mapWidth));
             let y = Math.trunc(myH - bg.height);
-            image(bg,0,0,myW,myH,0-x,0-y,myW,myH);
+            image(bg,0,0,myW,myH,0-x,0-y,800,600);
         });
         /*
          * These lines of code creates the tiles of the video game that are visible
@@ -257,6 +256,8 @@ export class GameMap {
         let i1=s1.getImage();
         let i2=s2.getImage();
         
+        if (!i1 || !i2) return false;
+
         let val = (pos1.x < pos2.x + i2.width &&
             pos2.x < pos1.x + i1.width &&
             pos1.y < pos2.y + i2.height &&
@@ -303,6 +304,7 @@ export class GameMap {
             }   
             else if (s instanceof Lava) {
                 p.setState(CreatureState.DYING);
+                this.canKill=false;
                 this.dying.play();
                 this.medallions=0;
             } 
@@ -487,19 +489,16 @@ export class GameMap {
 
         let pBottom = pPos.y + p.getImage().height;
         let eTop = ePos.y;
-
         let falling = p.getVelocity().y > 0;
-
         // IMPORTANT: use OLD movement direction already known here
         let hitFromAbove = (pBottom <= eTop + 12);
-
         if (falling && hitFromAbove) {
             if (enemy instanceof Lava) {
                 p.setState(CreatureState.DYING);
                 this.dying.play();
                 this.medallions=0;
                 this.lives-=1;
-                return;
+                return; 
             }
             (enemy as Creature).setState(CreatureState.DYING);
 
@@ -553,11 +552,11 @@ export class GameMap {
             }
             else if (sprite instanceof PowerUp) {
                 sprite.update(deltaTime);
-            }
-            else if (sprite instanceof Projectile) {
+            } 
+            else if (sprite instanceof Projectile){
                 this.updateSprite(sprite);
                 sprite.update(deltaTime);
-            } 
+            }
         });
     }
 

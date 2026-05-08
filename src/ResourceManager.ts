@@ -14,7 +14,7 @@ import { Projectile, EnemyProjectile} from "./sprites/Projectile.js";
 
 export class ResourceManager {
 
-    assets: Object;
+    assets: {[key: string]: any} | undefined;
     loads: {[key: string]: any};
     resources: {[key: string]: any};
     everythingLoaded: boolean;
@@ -42,7 +42,7 @@ export class ResourceManager {
             /**
              * loads up all the assets
              */
-            this.assets=value;
+            this.assets=value as object;
             
         }).catch(value => {
             throw new Error("Unable To Load Asset File: "+f);
@@ -212,6 +212,10 @@ export class ResourceManager {
                 s = new Lava();
                 break;
             }
+            case 'Grub':{
+                s = new Grub();
+                break;
+            }
             default: {
                 throw new Error();
             }
@@ -236,7 +240,7 @@ export class ResourceManager {
                 /**
                  * another loop for each animation
                  */
-                frames.forEach(frame => {
+                frames.forEach((frame: { [x: string]: any; hasOwnProperty: (arg0: string) => any; sheet: string | number; rows: number; cols: number; img: string | number; duration: number; }) => {
                     let images;
                     if (frame.hasOwnProperty("sheet")) {
                         /**
@@ -259,7 +263,7 @@ export class ResourceManager {
                             /**
                              * this applies any image operators before the animation
                              */
-                            frame['operators'].forEach(operator => {
+                            frame['operators'].forEach((operator: any) => {
                                 switch(operator) {
                                     case "mirror": {
                                         img=this.mirror(img);
@@ -378,7 +382,7 @@ export class ResourceManager {
                  * send an get request and load the response
                  */
                 case "get": {
-                    httpGet(rsc, j => {
+                    httpGet(rsc, (j: unknown) => {
                         resolve(j);
                     }, () => {
                         reject("failed to load "+rsc);

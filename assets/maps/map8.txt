@@ -12,5 +12,5 @@
                     555        555       555   BB                    -
                     EBBF  -    EBBF      EBBF      EBBF
                     KJJL       KJJL       KJJL     KJJL
-          p    0        g   EF  g      EF   g    EF
+              0        g   EF  g      EF   g    EF
 BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB

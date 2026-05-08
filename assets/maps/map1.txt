@@ -3,11 +3,12 @@
 @parallax-layer bg2
 @music music
 
+
 JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
                                                         C               
                            -             ooooo          C 
-               EBF                       EBBBBF         C 
-0                    -o                         EF      C
+         -        EBF                   EBBBBF          C
+  0                 -o                          EF      C
 BBBBF       EBF         o     -     EBF         -       C 
 AAAAD      EGAD            EBBBBF           EBBBBF EBBBBG
 AAAAD     ooo      -      EGNJJJL        EBBGNJJJL KJJJJM
