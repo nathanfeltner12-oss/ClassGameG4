@@ -49,7 +49,7 @@ export class GameManager {
         this.img1 = loadImage("assets/images/medallion1.png");
         this.img2 = loadImage("assets/images/life1.png");
 
-        this.level = 4;
+        this.level = 5;
         this.oldState = STATE.Loading;
         this.gameState = STATE.Loading;
 
