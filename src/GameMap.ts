@@ -184,9 +184,11 @@ export class GameMap {
         let position=this.player.getPosition();
         
         let offsetX = myW / 2 - Math.round(position.x) - this.tile_size;
-        offsetX = Math.trunc(Math.max(offsetX, myW - mapWidth));
-        let offsetY = myH / 2 - Math.round(position.y) - this.tile_size;
-        offsetY = Math.trunc(Math.max(offsetY, myH - mapHeight));
+let offsetY = myH / 2 - Math.round(position.y) - this.tile_size;
+
+// clamp camera so it doesn't go outside map bounds
+offsetX = Math.min(0, Math.max(myW - mapWidth, offsetX));
+offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                
         this.background.forEach(bg => {
             let x = Math.trunc(offsetX * (myW - bg.width)/(myW-mapWidth));
