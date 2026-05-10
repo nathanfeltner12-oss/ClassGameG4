@@ -367,13 +367,25 @@ export class GameMap {
                 this.medallions=0;
                 this.initialize();
             }
-            if(this.level==2 && this.medallions==10) {
+            if(this.level==2 && this.medallions==12) {
                 this.black_hole.play();
                 this.level+=1;
                 this.medallions=0;
                 this.initialize();
             }
-            if(this.level==3 && this.medallions==1) {
+            if(this.level==3 && this.medallions==10) {
+                this.black_hole.play();
+                this.level+=1;
+                this.medallions=0;
+                this.initialize();
+            }
+            if(this.level==4 && this.medallions==1) {
+                this.black_hole.play();
+                this.level+=1;
+                this.medallions=0;
+                this.initialize();
+            }
+            if(this.level==5 && this.medallions==1) {
                 this.black_hole.play();
                 this.level+=1;
                 this.medallions=0;

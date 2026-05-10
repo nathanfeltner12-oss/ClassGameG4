@@ -1,0 +1,18 @@
+
+@parallax-layer bg1
+@parallax-layer bg2
+@music music
+
+       ooo        BB      
+     BBBBBBBB        5       g  o
+ BB             BB   C BBBBBBBBBBBBB
+      oo             C    
+    BBBBBBB          Co                g
+                oo   CB            BBBBBBBBBB
+              BBBBBB Cg
+  BB                 CBB
+        BBB          CAAB
+               ooo   CAD            g
+            EBBBBBBBBGAD BBG       BBBBBBBB
+0           CAAAAAAAAAo g  D       55555555          %
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
