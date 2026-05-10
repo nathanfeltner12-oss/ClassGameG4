@@ -35,6 +35,8 @@ export class GameManager {
     stop: GameAction;
     restart: GameAction;
     dash: GameAction;
+    talk: GameAction;
+    
 
     isDashing: boolean;
     dashTime: number;
@@ -47,7 +49,7 @@ export class GameManager {
         this.img1 = loadImage("assets/images/medallion1.png");
         this.img2 = loadImage("assets/images/life1.png");
 
-        this.level = 0;
+        this.level = 5;
         this.oldState = STATE.Loading;
         this.gameState = STATE.Loading;
 
@@ -61,6 +63,7 @@ export class GameManager {
         this.stop = new GameAction();
         this.restart = new GameAction();
         this.dash = new GameAction();
+        this.talk = new GameAction();
 
         this.isDashing = false;
         this.dashTime = 0;
@@ -158,6 +161,9 @@ export class GameManager {
             this.isDashing = true;
             this.dashTime = this.dashDuration;
             vel.x = this.lastDir * this.map.player.getMaxSpeed() * 3;
+            if(this.dash.isPressed() && this.map.player.getState() == CreatureState.NORMAL){
+                this.map.dash.play();
+            }
         }
 
         if (this.isDashing) {
@@ -183,6 +189,9 @@ export class GameManager {
         this.map.player.setVelocity(vel.x, vel.y);
 
         if (this.jump.isPressed() && this.map.player.getState() == CreatureState.NORMAL) {
+            if(this.map.player.onGround){
+                this.map.jump.play();
+            }
             this.map.player.jump(false);
         }
 

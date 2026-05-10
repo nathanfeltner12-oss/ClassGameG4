@@ -36,6 +36,9 @@ export class GameMap {
     lives: number;
     oneUp!: p5.SoundFile;
     canKill: boolean;
+    jump: p5.SoundFile;
+    talk: p5.SoundFile;
+    dash: p5.SoundFile;
 
     constructor(level:number, resources:ResourceManager, settings:Settings, game: GameManager) {
     /*
@@ -60,6 +63,10 @@ export class GameMap {
         this.full_death=this.resources.getLoad("full_death");
         this.black_hole=this.resources.getLoad("blackHole");
         this.dying = this.resources.getLoad("dying");
+        this.jump = this.resources.getLoad("jump");
+        this.talk = this.resources.getLoad("talk");
+        this.dash = this.resources.getLoad("dash");
+
         /*
          * These initialze arrays to store sprites and backgrounds 
          */
@@ -558,6 +565,10 @@ export class GameMap {
             else if (sprite instanceof PowerUp) {
                 sprite.update(deltaTime);
             } 
+            else if (sprite instanceof Projectile){
+                this.updateSprite(sprite);
+                sprite.update(deltaTime);
+            }
         });
     }
 

@@ -1,0 +1,16 @@
+@parallax-layer bg1
+@parallax-layer bg2
+@music music
+
+
+
+
+                              
+                        %       3                           -
+                    BBBBBBBBBBBBBBBBBBBBBBB
+                      -                                             -
+                    555        555       555   BB                    -
+                    EBBF  -    EBBF      EBBF      EBBF
+                    KJJL       KJJL       KJJL     KJJL
+              0        g   EF  g      EF   g    EF
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
