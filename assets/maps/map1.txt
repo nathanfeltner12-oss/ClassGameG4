@@ -6,11 +6,11 @@
 
 
                                                                      
-        oo                               
+        oo  g                             
        AAAAAAA        
-  0                     oo      -        %
+  0                     oo g           g   %
 BBBBF                BBBBBBBB     AAAAAAAAAAAAAA    
-AAAAD         oooooo  -                              
+AAAAD       g  oooooo   g      g                       
 AAAAD    BBBBBBBBBBBBBBBBBBBBBBBBB                      
 AAAAD                                                   
 AAAAD555555555555555555555555555555555555555555555555555
