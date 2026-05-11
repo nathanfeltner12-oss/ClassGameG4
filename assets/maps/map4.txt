@@ -3,16 +3,16 @@
 @music music
 
 
-NJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJM
-
- 0
-BBBBBB     -          o     BB  BBBBBB   
-     o               BBBBB         -   BBB        BBB       oo
-     BBBBBBBBB                        -                  BBBBBB
-                                          BBBBBB
-                oooooo      - BBBBBB            -             %
-             BBBBBBBBBBBBB             BBBBBBBBBBBBBBBBBBBBBBBBB
-             
-
-5555555555555555555555555555555555555555555555555555555555555555
-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+NJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJM
+D                                                               C
+D 0                                                             C
+HBBBBF         -     o     EF  EBBBBF                        oo C
+NJJJJL  o           EBBBF          -    EBF        EBF    EBBBBBG
+D      EBBBBBBBF                                       -  KJJJJJM
+D                                   -      EBBBBF               C
+D                oooooo   -   EBBBBF                        %   C
+D             EBBBBBBBBBBBF             EBBBBBBBBBBBBBBBBBBBBBBBH
+D             CAAAAAAAAAAAD             CAAAAAAAAAAAAAAAAAAAAAAAA
+D             CAAAAAAAAAAAD             CAAAAAAAAAAAAAAAAAAAAAAAA
+D555555555555 CAAAAAAAAAAAD555555555555 CAAAAAAAAAAAAAAAAAAAAAAAA
+HBBBBBBBBBBBBBGAAAAAAAAAAAHBBBBBBBBBBBBBGAAAAAAAAAAAAAAAAAAAAAAAA

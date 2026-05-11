@@ -3,8 +3,6 @@
             "fly1": "assets/images/fly1.png",
             "fly2": "assets/images/fly2.png",
             "fly3": "assets/images/fly3.png",
-            "grub1": "assets/images/grub1.png",
-            "grub2": "assets/images/grub2.png",
             "grub1_left": "assets/images/grub1_left.png",
             "grub1_right": "assets/images/grub1_right.png",
             "WalkNinjaL": "assets/images/WalkNL.png",
@@ -17,11 +15,11 @@
             "life1": "assets/images/life1.png",
             "life2": "assets/images/life2.png",
             "life3": "assets/images/life3.png",
-            "lava1": "assets/images/lava.png",
-            "lava2": "assets/images/lava1.png",
+            "lava1": "assets/images/Spike.png",
+            "lava2": "assets/images/Spike.png",
             "final_boss_dead1": "assets/images/final_boss_dead1.png",
             "final_boss_dead2": "assets/images/final_boss_dead2.png",
-            "final_boss_dead3": "assets/images/final_boss_dead2.png",
+            "final_boss_dead3": "assets/images/final_boss_dead3.png",
             "final_boss1": "assets/images/final_boss/final_boss1.png",
             "final_boss2": "assets/images/final_boss/final_boss2.png",
             "final_boss3": "assets/images/final_boss/final_boss3.png",
@@ -46,26 +44,40 @@
             "medallion1": "assets/images/medallion1.png",
             "medallion2": "assets/images/medallion2.png",
             "medallion3": "assets/images/medallion3.png",
-            "medallion4": "assets/images/medallion4.png"
+            "medallion4": "assets/images/medallion4.png",
+            "Shuriken1": "assets/images/Shuriken1.png",
+            "Shuriken2": "assets/images/Shuriken2.png"
+            
         },
         "text": {
             "map1": "assets/maps/map1.txt",
             "map2": "assets/maps/map2.txt",
+            "map3": "assets/maps/map3.txt",
             "map4": "assets/maps/map4.txt",
-            "map5": "assets/maps/map5.txt"
+            "map5": "assets/maps/map5.txt",
+            "map7": "assets/maps/map7.txt",
+            "map8": "assets/maps/map8.txt"
+
+
+
         },
         "sound": {
-            "music": "assets/sounds/background_music.mp3",
+            "music": "assets/sounds/259177__zagi2__koto-and-shamisen-loop-2.wav",
             "prize": "assets/sounds/medallion.wav",
             "boop2": "assets/sounds/dead.wav",
             "blackHole": "assets/sounds/Black hole sound.wav",
-            "dying": "assets/sounds/hurt.wav",
+            "dying": "assets/sounds/817288__nightdrawr__short-death-sound.mp3",
             "spit": "assets/sounds/alien_spit.wav",
             "gun_blast": "assets/sounds/gun_blast.wav",
-            "full_death": "assets/sounds/Dying.wav",
+            "full_death": "assets/sounds/84353__creativeheroes__helmutscream_short.wav",
             "ammo": "assets/sounds/ammo.wav",
             "boost": "assets/sounds/boost.wav",
-            "1up": "assets/sounds/1up.wav"
+            "1up": "assets/sounds/1up.wav",
+            "jump":"assets/sounds/328715__robinhood76__06098-short-jump-swoosh.wav",
+            "talk":"assets/sounds/391286__igor1998__ninja.wav",
+            "dash":"assets/sounds/688551__d4nhardt__dashnoise.wav"
+
+
         },
         "json": {
             "resources": "assets/resources/resources.json"

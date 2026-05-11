@@ -35,6 +35,10 @@ export class GameMap {
     ALPHALEVEL: number;
     lives: number;
     oneUp!: p5.SoundFile;
+    canKill: boolean;
+    jump: p5.SoundFile;
+    talk: p5.SoundFile;
+    dash: p5.SoundFile;
 
     constructor(level:number, resources:ResourceManager, settings:Settings, game: GameManager) {
     /*
@@ -47,6 +51,7 @@ export class GameMap {
         this.medallions=0;
         this.lives=3;
         this.game=game;
+        this.canKill=true;
         this.initialize();
     }
 
@@ -58,6 +63,10 @@ export class GameMap {
         this.full_death=this.resources.getLoad("full_death");
         this.black_hole=this.resources.getLoad("blackHole");
         this.dying = this.resources.getLoad("dying");
+        this.jump = this.resources.getLoad("jump");
+        this.talk = this.resources.getLoad("talk");
+        this.dash = this.resources.getLoad("dash");
+
         /*
          * These initialze arrays to store sprites and backgrounds 
          */
@@ -175,9 +184,11 @@ export class GameMap {
         let position=this.player.getPosition();
         
         let offsetX = myW / 2 - Math.round(position.x) - this.tile_size;
-        offsetX = Math.trunc(Math.max(offsetX, myW - mapWidth));
-        let offsetY = myH / 2 - Math.round(position.y) - this.tile_size;
-        offsetY = Math.trunc(Math.max(offsetY, myH - mapHeight));
+let offsetY = myH / 2 - Math.round(position.y) - this.tile_size;
+
+// clamp camera so it doesn't go outside map bounds
+offsetX = Math.min(0, Math.max(myW - mapWidth, offsetX));
+offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                
         this.background.forEach(bg => {
             let x = Math.trunc(offsetX * (myW - bg.width)/(myW-mapWidth));
@@ -295,6 +306,7 @@ export class GameMap {
             }   
             else if (s instanceof Lava) {
                 p.setState(CreatureState.DYING);
+                this.canKill=false;
                 this.dying.play();
                 this.medallions=0;
             } 
@@ -357,13 +369,25 @@ export class GameMap {
                 this.medallions=0;
                 this.initialize();
             }
-            if(this.level==2 && this.medallions==10) {
+            if(this.level==2 && this.medallions==12) {
                 this.black_hole.play();
                 this.level+=1;
                 this.medallions=0;
                 this.initialize();
             }
-            if(this.level==3 && this.medallions==1) {
+            if(this.level==3 && this.medallions==10) {
+                this.black_hole.play();
+                this.level+=1;
+                this.medallions=0;
+                this.initialize();
+            }
+            if(this.level==4 && this.medallions==1) {
+                this.black_hole.play();
+                this.level+=1;
+                this.medallions=0;
+                this.initialize();
+            }
+            if(this.level==5 && this.medallions==1) {
                 this.black_hole.play();
                 this.level+=1;
                 this.medallions=0;
@@ -479,14 +503,17 @@ export class GameMap {
 
         let pBottom = pPos.y + p.getImage().height;
         let eTop = ePos.y;
-
         let falling = p.getVelocity().y > 0;
-
         // IMPORTANT: use OLD movement direction already known here
         let hitFromAbove = (pBottom <= eTop + 12);
-
         if (falling && hitFromAbove) {
-
+            if (enemy instanceof Lava) {
+                p.setState(CreatureState.DYING);
+                this.dying.play();
+                this.medallions=0;
+                this.lives-=1;
+                return; 
+            }
             (enemy as Creature).setState(CreatureState.DYING);
 
             // bounce player
@@ -510,6 +537,7 @@ export class GameMap {
                 s.setVelocity(oldVel.x*-1, - oldVel.y);
             }
         }
+        
     }
     
     /*
@@ -539,6 +567,10 @@ export class GameMap {
             else if (sprite instanceof PowerUp) {
                 sprite.update(deltaTime);
             } 
+            else if (sprite instanceof Projectile){
+                this.updateSprite(sprite);
+                sprite.update(deltaTime);
+            }
         });
     }
 
