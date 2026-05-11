@@ -7,8 +7,8 @@
 
 
                     ooo
-  0          ooo  g        g                       g   oo
-BBBBF     BBBBBBBB5555  BBBBBF                  CBBBBBBBBB
+  0          ooog          g                       g   oo
+BBBBF     BBBBBBBB5555  BBBBBF                   CBBBBBBBBB
 AAAAD5555 C       AAAAAA     D    g       oooo   C
 AAAADAAAAA                   BBBBBBBB  BBBBBBBBBBC
 AAAAD                                    
