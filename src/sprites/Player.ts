@@ -3,6 +3,7 @@ import { Creature, CreatureState } from "./Creature.js";
 import { Sprite } from "./Sprite.js";
 import { Bullet } from "./Bullet.js";
 import { GameMap } from "../GameMap.js";
+import { FriendlyProjectile } from "./Projectile.js";
 /**
  * defines the player class as a subclass of creature
  */
@@ -43,16 +44,21 @@ export class Player extends Creature {
     }
     shoot(gameMap: GameMap) {
 
-    let direction = this.velocity.x >= 0 ? 1 : -1;
+    let bullet: FriendlyProjectile =
+        gameMap.resources.get("shuriken").clone();
 
-    let bullet = new Bullet(direction);
+    // spawn at player position
+    bullet.setPosition(this.position.x, this.position.y);
 
-    let pos = this.getPosition();
+    // bullet speed
+    let speed = 0.6;
 
-    bullet.setPosition(
-        pos.x + (direction === 1 ? 30 : -30),
-        pos.y
-    );
+    // shoot left or right
+    if (this.currAnimName.toUpperCase().includes("LEFT")) {
+        bullet.setVelocity(-speed, 0);
+    } else {
+        bullet.setVelocity(speed, 0);
+    }
 
     gameMap.sprites.push(bullet);
 }

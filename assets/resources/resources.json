@@ -1,5 +1,14 @@
 {
     "sprites": {
+
+    "shuriken": {
+        "type": "FriendlyProjectile",
+        "default": [
+        {"img":"Shuriken1", "duration":100},
+        {"img":"Shuriken2", "duration":100}
+    ]
+},
+        
         "goo": {
             "type": "EnemyProjectile",
             "default": [
