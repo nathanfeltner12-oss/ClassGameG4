@@ -48,15 +48,12 @@ export class GameManager {
 
         this.img1 = loadImage("assets/images/medallion1.png");
         this.img2 = loadImage("assets/images/life1.png");
-
-        this.level = 5;
+        this.level = 0;
         this.oldState = STATE.Loading;
         this.gameState = STATE.Loading;
-
         this.resources = new ResourceManager("assets/assets.json");
         this.inputManager = new InputManager();
         this.settings = new Settings();
-
         this.moveRight = new GameAction();
         this.moveLeft = new GameAction();
         this.jump = new GameAction();
@@ -64,11 +61,9 @@ export class GameManager {
         this.restart = new GameAction();
         this.dash = new GameAction();
         this.talk = new GameAction();
-
         this.isDashing = false;
         this.dashTime = 0;
         this.dashDuration = 12;
-
         this.lastDir = 1;
     }
 

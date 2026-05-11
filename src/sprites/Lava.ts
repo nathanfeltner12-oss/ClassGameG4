@@ -13,4 +13,5 @@ export class Lava extends Creature {
         this.canKill=false;
         CreatureState.NORMAL;
     }
+    
 }

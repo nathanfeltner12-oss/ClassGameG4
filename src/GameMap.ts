@@ -512,6 +512,12 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                 this.dying.play();
                 this.medallions=0;
                 this.lives-=1;
+                if (this.lives==0){
+                    this.full_death.play();
+                    this.level=0;
+                    this.medallions=0;
+                    this.lives+=3;
+                }
                 return; 
             }
             (enemy as Creature).setState(CreatureState.DYING);
