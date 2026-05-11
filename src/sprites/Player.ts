@@ -14,6 +14,7 @@ export class Player extends Creature {
     JUMP_SPEED:number;
     MAX_FUEL:number;
     onGround:boolean;
+    onWall:boolean;
     jetPackOn:boolean;
     thrusterAmount:number;
     fuel:number;
@@ -39,6 +40,7 @@ export class Player extends Creature {
         this.numBullets = 3;
         this.lives = 3;
         this.onGround=false;
+        this.onWall = false;
         this.jetPackOn=false;
     }
     shoot(gameMap: GameMap) {
@@ -109,6 +111,7 @@ export class Player extends Creature {
      */
     collideHorizontal() {
         this.velocity.x=0;
+        this.onWall=true;
     }
     /**
      * funtion to restart the level
@@ -121,8 +124,9 @@ export class Player extends Creature {
      * @param forceJump
      */
     jump(forceJump:boolean) {
-        if (this.onGround || forceJump) {
+        if (this.onGround || this.onWall || forceJump) {
             this.onGround=false;
+            this.onWall=false;
             this.setVelocity(0,-this.JUMP_SPEED);
         }
     }
