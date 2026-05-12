@@ -508,11 +508,13 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
         let hitFromAbove = (pBottom <= eTop + 12);
         if (falling && hitFromAbove) {
             if (enemy instanceof Lava) {
-                p.setState(CreatureState.DYING);
-                this.dying.play();
-                this.medallions=0;
-                this.lives-=1;
-                if (this.lives==0){
+                if (this.lives >= 1) {
+                    p.setState(CreatureState.DYING);
+                    this.dying.play();
+                    this.medallions=0;
+                    this.lives-=1;
+                }
+                if (this.lives == 1){
                     this.full_death.play();
                     this.level=0;
                     this.medallions=0;
