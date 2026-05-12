@@ -45,3 +45,43 @@ export class EnemyProjectile extends Projectile {
         this.followPlayer=true;
     }
 }
+
+export class FriendlyProjectile extends Projectile {
+    
+    remove:boolean;
+    followPlayer:boolean;
+    MAX_TIME: number;
+    currentTime: number;
+
+    constructor() {
+        super();
+        this.remove=false;
+        this.followPlayer=false;
+        this.MAX_TIME = 3000;
+        this,this.currentTime = 0;
+    }
+
+    clearFollowPlayer() {
+        this.followPlayer=false;
+    }
+
+    setFollowPlayer() {
+        this.followPlayer=true;
+    }
+
+    update(elapsedTime: number): void {
+        super.update(elapsedTime);
+
+        
+        this.currentTime += elapsedTime;
+
+        
+        if (this.currentTime >= this.MAX_TIME) {
+            this.remove = true;
+        }
+            
+    }
+    checkRemove(){
+        return this.remove;
+    }
+}

@@ -4,7 +4,7 @@ import { Sprite } from "./sprites/Sprite.js";
 import { GRAVITY, STATE, GameManager } from './GameManager.js';
 import { Creature, CreatureState, Grub } from "./sprites/Creature.js";
 import { Heart, Music, PowerUp, Star} from "./sprites/PowerUp.js";
-import { Projectile, EnemyProjectile } from './sprites/Projectile.js';
+import { Projectile, EnemyProjectile, FriendlyProjectile } from './sprites/Projectile.js';
 import { Lava } from "./sprites/Lava.js"
 import { Settings } from "./Settings.js";
 import { Vector } from "p5";
@@ -280,11 +280,14 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
         }
         return null;
     }
-
+    
     /*
      * This checks to see if there is a player collision with a sprite and it initializes
      * that the player can kill the sprite
      */
+
+    
+    
     checkPlayerCollision(p: Player, canKill: boolean) {
         if (p.getState()!=CreatureState.NORMAL) return;
         let s=this.getSpriteCollision(p);
@@ -297,6 +300,7 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                     this.medallions=0;
                     this.lives+=3;
                 }
+            
                 if(this.lives>1){
                     p.setState(CreatureState.DYING);
                     this.dying.play();
@@ -544,6 +548,11 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                 let oldVel=s.getVelocity();
                 s.setVelocity(oldVel.x*-1, - oldVel.y);
             }
+            else if(spriteCollided && s instanceof Creature && (spriteCollided instanceof FriendlyProjectile)){
+                 (s as Creature).setState(CreatureState.DYING);
+                 this.removeSprite(spriteCollided);
+                 
+            }
         }
         
     }
@@ -577,7 +586,15 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
             } 
             else if (sprite instanceof Projectile){
                 this.updateSprite(sprite);
-                sprite.update(deltaTime);
+                if(sprite instanceof FriendlyProjectile){
+                    (sprite as FriendlyProjectile).update(deltaTime);
+                    if((sprite as FriendlyProjectile).checkRemove()){
+                        this.removeSprite(sprite);
+                    }
+                } 
+                else {  
+                    sprite.update(deltaTime);
+                }
             }
         });
     }
