@@ -184,9 +184,11 @@ export class GameMap {
         let position=this.player.getPosition();
         
         let offsetX = myW / 2 - Math.round(position.x) - this.tile_size;
-        offsetX = Math.trunc(Math.max(offsetX, myW - mapWidth));
-        let offsetY = myH / 2 - Math.round(position.y) - this.tile_size;
-        offsetY = Math.trunc(Math.max(offsetY, myH - mapHeight));
+let offsetY = myH / 2 - Math.round(position.y) - this.tile_size;
+
+// clamp camera so it doesn't go outside map bounds
+offsetX = Math.min(0, Math.max(myW - mapWidth, offsetX));
+offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                
         this.background.forEach(bg => {
             let x = Math.trunc(offsetX * (myW - bg.width)/(myW-mapWidth));
@@ -371,13 +373,25 @@ export class GameMap {
                 this.medallions=0;
                 this.initialize();
             }
-            if(this.level==2 && this.medallions==10) {
+            if(this.level==2 && this.medallions==12) {
                 this.black_hole.play();
                 this.level+=1;
                 this.medallions=0;
                 this.initialize();
             }
-            if(this.level==3 && this.medallions==1) {
+            if(this.level==3 && this.medallions==10) {
+                this.black_hole.play();
+                this.level+=1;
+                this.medallions=0;
+                this.initialize();
+            }
+            if(this.level==4 && this.medallions==1) {
+                this.black_hole.play();
+                this.level+=1;
+                this.medallions=0;
+                this.initialize();
+            }
+            if(this.level==5 && this.medallions==1) {
                 this.black_hole.play();
                 this.level+=1;
                 this.medallions=0;
@@ -498,10 +512,18 @@ export class GameMap {
         let hitFromAbove = (pBottom <= eTop + 12);
         if (falling && hitFromAbove) {
             if (enemy instanceof Lava) {
-                p.setState(CreatureState.DYING);
-                this.dying.play();
-                this.medallions=0;
-                this.lives-=1;
+                if (this.lives >= 1) {
+                    p.setState(CreatureState.DYING);
+                    this.dying.play();
+                    this.medallions=0;
+                    this.lives-=1;
+                }
+                if (this.lives == 1){
+                    this.full_death.play();
+                    this.level=0;
+                    this.medallions=0;
+                    this.lives+=3;
+                }
                 return; 
             }
             (enemy as Creature).setState(CreatureState.DYING);

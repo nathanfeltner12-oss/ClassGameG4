@@ -8,6 +8,12 @@ export class Projectile extends Sprite {
         this.setVelocity(0.55,0);
     }
 
+    update(elapsedTime: number) {
+        super.update(elapsedTime);
+        this.position.x += this.velocity.x * elapsedTime;
+        this.position.y += this.velocity.y * elapsedTime;
+    }
+
     isFlying() {
         return true;
     }
