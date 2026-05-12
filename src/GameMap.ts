@@ -307,7 +307,6 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                 if (this.lives <= 0) {
 
                     this.full_death.play();
-<<<<<<< HEAD
 
                     // full reset
                     this.level = 0;
@@ -319,15 +318,6 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                 } else {
 
                     // normal death sound
-=======
-                    this.level=0;
-                    this.medallions=0;
-                    this.lives+=3;
-                }
-            
-                if(this.lives>1){
-                    p.setState(CreatureState.DYING);
->>>>>>> f48bd399ca3ab3eb339538b0e0e4ee6fed72930a
                     this.dying.play();
                }
         }
@@ -396,7 +386,7 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                 this.medallions=0;
                 this.initialize();
             }
-            if(this.level==2 && this.medallions==12) {
+            if(this.level==2 && this.medallions==13) {
                 this.black_hole.play();
                 this.level+=1;
                 this.medallions=0;
@@ -415,6 +405,12 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
                 this.initialize();
             }
             if(this.level==5 && this.medallions==1) {
+                this.black_hole.play();
+                this.level+=1;
+                this.medallions=0;
+                this.initialize();
+            }
+            if(this.level==6 && this.medallions==45) {
                 this.black_hole.play();
                 this.level+=1;
                 this.medallions=0;
