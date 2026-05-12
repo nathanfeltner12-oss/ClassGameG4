@@ -9,7 +9,7 @@ import { Power } from "./sprites/PowerUp.js";
 import { FinalBoss } from "./sprites/FinalBoss.js";
 import {Lava} from "./sprites/Lava.js";
 import { Fireball } from "./sprites/Fireball.js";
-import { Projectile, EnemyProjectile} from "./sprites/Projectile.js";
+import { Projectile, EnemyProjectile, FriendlyProjectile} from "./sprites/Projectile.js";
 
 
 export class ResourceManager {
@@ -156,6 +156,10 @@ export class ResourceManager {
          * builds our sprites and names them
          */
         switch (spriteType) {
+            case 'FriendlyProjectile': {
+                s = new FriendlyProjectile();
+                break;
+            }
             case 'EnemyProjectile': {
                 s = new EnemyProjectile();
                 break;
@@ -168,8 +172,8 @@ export class ResourceManager {
                 s = new Creature();
                 break;
             }
-            case 'shuriken': {
-                s = new Bullet();
+            case 'Shuriken': {
+                s = new FriendlyProjectile();
                 break;
             }
             case 'Sprite': {

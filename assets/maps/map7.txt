@@ -2,9 +2,40 @@
 @parallax-layer bg2
 @music music
 
-JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
-
-
-                              
-                    0      3         
-                BBBBBBBBBBBBBBBBBBBBBBBBB
+        -                             %                     -
+                           BBBBBBBBBBBBBBBBBBBBBBBBBBB                  -
+                        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB                   -
+                     BBBBB                           
+                  BBBBB   o  -       o         o-       BBBBB
+                BBBBB    EBBF      BBBB      EBBF        BBBBB
+              BBBBB      KJJL      BBBB      KJJL          BBBBB
+            BBBBB               -      ooooo             -    BBBBB
+          BBBBB      BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB             BBBBB
+         BBBBB     B                                              - BBBBB
+        BBBBB   B     g      EF        g       EF         g         BBBBB
+       BBBBB                                                oooo      BBBBB
+      BBBBBBBBBBBBBBBBBBBBBBBBBBB        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+      BBBBB                    oooooooooo                              BBB
+      BBBBB      -            BBBBBBBBBBBB             -               BBB
+      BBBBB       ooo       BBB          BBB        ooo                BBB
+      BBBBB      EBBF -     BBB    3       BBB -   EBBF               BBB
+      BBBBB      KJJL      BBBBBBBBBBBBBBBBBB      KJJL                 BBB
+      BBBBB       g           g         g                                BB
+      BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB    BB
+      BBBBB                   o                o                   BBB g  BB
+      BBBBB        g         EF       g       EF        g               BBB
+      BBBBB                                                               B
+      BBBBB    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+      BBBBBBB                                                             B
+      BBBBBBBB       -    oo      -    oo      -           -              B
+      BBBBB   EBBF      BBBBBBBBBBBBBBBBBBB      EBBF    BBBBBBBBBBBB o   B            
+      BBBBB   KJJL      BBBBBBBBBBBBBBBBBBB      KJJL               BBB   B
+      BBBBB        g                         g                            B
+      BBBBBBBBBBBBBBBBBBBBBBB  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+      BBBBB                   o                     o                     B
+      BBBBB          g       EF          g        EF          g           B
+      BBBBB                                                               B
+      BBBBB      BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB          B
+      BBBBB                                   -                  B        B
+      BBBBB       0          oooooooo                     -               B
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
