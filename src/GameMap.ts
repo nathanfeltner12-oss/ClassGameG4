@@ -290,20 +290,34 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
         let s=this.getSpriteCollision(p);
         if (s && this.pp_collision(p,s)) {
             if (s instanceof Creature || s instanceof EnemyProjectile) {
-                if(this.lives==1){
-                    p.setState(CreatureState.DYING)
+
+                // lose a life
+                this.lives--;
+
+                // player death animation
+                p.setState(CreatureState.DYING);
+
+                // reset medallions
+                this.medallions = 0;
+
+                // check for game over
+                if (this.lives <= 0) {
+
                     this.full_death.play();
-                    this.level=0;
-                    this.medallions=0;
-                    this.lives+=3;
-                }
-                if(this.lives>1){
-                    p.setState(CreatureState.DYING);
+
+                    // full reset
+                    this.level = 0;
+                    this.lives = 3;
+                    this.medallions = 0;
+
+                   this.initialize();
+
+                } else {
+
+                    // normal death sound
                     this.dying.play();
-                    this.medallions=0;
-                    this.lives-=1;
-                }                
-            }   
+               }
+        }
             else if (s instanceof Lava) {
                 p.setState(CreatureState.DYING);
                 this.canKill=false;
@@ -508,20 +522,29 @@ offsetY = Math.min(0, Math.max(myH - mapHeight, offsetY));
         let hitFromAbove = (pBottom <= eTop + 12);
         if (falling && hitFromAbove) {
             if (enemy instanceof Lava) {
-                if (this.lives >= 1) {
-                    p.setState(CreatureState.DYING);
-                    this.dying.play();
-                    this.medallions=0;
-                    this.lives-=1;
+
+    // lose life
+    this.lives--;
+
+    // player death animation
+    p.setState(CreatureState.DYING);
+            // reset medallions
+            this.medallions = 0;
+            // GAME OVER
+            if (this.lives <= 0) {
+                this.full_death.play();
+                // full reset
+                this.level = 0;
+                this.lives = 3;
+                this.medallions = 0;
+                this.initialize();
+            } else {
+                // regular death
+                this.dying.play();
                 }
-                if (this.lives == 1){
-                    this.full_death.play();
-                    this.level=0;
-                    this.medallions=0;
-                    this.lives+=3;
-                }
-                return; 
+                return;
             }
+                
             (enemy as Creature).setState(CreatureState.DYING);
 
             // bounce player
